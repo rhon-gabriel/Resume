@@ -62,8 +62,8 @@ const Recipe = () => {
 
         <Col>
           <Router>
-            <Nav variant="pills light">
-              <Nav.Link eventKey="link-1">
+            <Nav variant="pills light" defaultActiveKey="/starter">
+              <Nav.Link href="/starter">
                 <Link to={"/starter"} className="nav-link">
                   Starter
                 </Link>
