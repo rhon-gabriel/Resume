@@ -6,15 +6,17 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
     width: 400,
     border: 4,
     borderColor: "#83a4d4"
   },
-  title: {
-    fontSize: 12
+  font: {
+    fontFamily: "Montserrat"
   },
   root: {
     display: "flex",
@@ -24,7 +26,7 @@ const useStyles = makeStyles({
     width: 700,
     height: 600
   }
-});
+}));
 
 const Starter = props => {
   const classes = useStyles();
@@ -36,19 +38,23 @@ const Starter = props => {
             <GridListTile>
               <Card key={recipe.id}>
                 <CardContent className={classes.card}>
-                  <button onClick={() => props.removeRecipe(recipe.id)}>
-                    X
-                  </button>
-                  <Typography variant="h5" component="h2">
+                  <IconButton
+                    color="secondary"
+                    aria-label="Delete"
+                    className={classes.margin}
+                  >
+                    <DeleteIcon onClick={() => props.removeRecipe(recipe.id)} />
+                  </IconButton>
+                  <Typography variant="h6" className={classes.font}>
                     {recipe.title}
                   </Typography>
-                  <Typography color="textSecondary">
+                  <Typography className={classes.font} color="textSecondary">
                     Ingredients: {recipe.ingredient}
                   </Typography>
-                  <Typography color="textSecondary">
+                  <Typography className={classes.font} color="textSecondary">
                     {recipe.ingredient}
                   </Typography>
-                  <Typography variant="body2" component="p">
+                  <Typography className={classes.font}>
                     Method: {recipe.body}
                   </Typography>
                 </CardContent>

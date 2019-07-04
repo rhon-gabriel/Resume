@@ -7,7 +7,6 @@ import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
@@ -65,14 +64,14 @@ const Recipe = () => {
       borderRadius: 5,
       height: 50,
       width: 200,
+      color: "white",
       padding: "0 30px"
     },
     input: {
       display: "none"
     },
     font: {
-      fontSize: 16,
-      color: "white"
+      fontSize: 16
     }
   }));
 
@@ -87,7 +86,7 @@ const Recipe = () => {
         <Col xs={12} md={8}>
           <Router>
             <Nav defaultActiveKey="/recipes">
-              <Link to={"/recipes"} className={classes.font}>
+              <Link to={"/recipes"}>
                 <button className={classes.button}>Starter</button>
               </Link>
 
