@@ -12,6 +12,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 
+import { makeStyles } from "@material-ui/core/styles";
+
 const Recipe = () => {
   const [recipe, setRecipes] = useState([]);
 
@@ -53,43 +55,59 @@ const Recipe = () => {
     fetchData();
   }, []);
 
+  const useStyles = makeStyles(theme => ({
+    containerMargin: {
+      marginLeft: 50
+    },
+    button: {
+      margin: theme.spacing(0.5),
+      background: "linear-gradient(to right, #83a4d4, #b6fbff)",
+      borderRadius: 5,
+      height: 50,
+      width: 200,
+      padding: "0 30px"
+    },
+    input: {
+      display: "none"
+    },
+    font: {
+      fontSize: 16,
+      color: "white"
+    }
+  }));
+
+  const classes = useStyles();
   return (
-    <Container>
-      <Row>
+    <div className={classes.containerMargin}>
+      <Row className={classes.row}>
         <Col>
           <NewRecipe add={addNewList} />
         </Col>
 
-        <Col>
+        <Col xs={12} md={8}>
           <Router>
-            <Nav variant="pills light" defaultActiveKey="/starter">
-              <Nav.Link href="/starter">
-                <Link to={"/starter"} className="nav-link">
-                  Starter
-                </Link>
-              </Nav.Link>
+            <Nav defaultActiveKey="/recipes">
+              <Link to={"/recipes"} className={classes.font}>
+                <button className={classes.button}>Starter</button>
+              </Link>
 
               <Nav.Item>
-                <Nav.Link eventKey="link-2">
-                  <Link to={"/main"} className="nav-link">
-                    Main
-                  </Link>
-                </Nav.Link>
+                <Link to={"/main"} className={classes.font}>
+                  <button className={classes.button}>Main</button>
+                </Link>
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link eventKey="link-3">
-                  <Link to={"/dessert"} className="nav-link">
-                    Dessert
-                  </Link>
-                </Nav.Link>
+                <Link to={"/dessert"} className={classes.font}>
+                  <button className={classes.button}>Dessert</button>
+                </Link>
               </Nav.Item>
             </Nav>
 
             <Switch>
               <Route
                 exact
-                path="/starter"
+                path="/recipes"
                 component={() => (
                   <Starter recipe={recipe} removeRecipe={removeRecipe} />
                 )}
@@ -112,7 +130,7 @@ const Recipe = () => {
           </Router>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

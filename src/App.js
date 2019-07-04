@@ -8,15 +8,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to={"/home"} className="nav-link">
+        <Link to={"/"} className="nav-link">
           Home
-        </Link>
-        <Link to={"/recipes"} className="nav-link">
-          Recipes
         </Link>
 
         <Switch>
-          <Route exact path="/home" component={() => <Welcome />} />
+          <Route exact path="/" component={() => <Welcome />} />
           <Route exact path="/recipes" component={() => <Recipes />} />
         </Switch>
       </Router>
