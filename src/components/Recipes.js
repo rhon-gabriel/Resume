@@ -14,24 +14,24 @@ import Nav from "react-bootstrap/Nav";
 import { makeStyles } from "@material-ui/core/styles";
 
 const Recipe = () => {
-  const [recipe, setRecipes] = useState([]);
+  const [plant, setPlants] = useState([]);
 
   async function fetchData() {
-    const res = await fetch("/api/v1/recipes");
+    const res = await fetch("/api/v1/plants");
     res
       .json()
-      .then(res => setRecipes(res.recipe))
+      .then(res => setPlants(res.plant))
       .catch(error => {
         console.log(error);
       });
   }
 
-  async function addNewList(title, ingredient, body, category_id) {
+  async function addNewList(name, watering, link, body, category_id) {
     axios
-      .post("/api/v1/recipes", { title, ingredient, body, category_id })
+      .post("/api/v1/plants", { name, watering, link, body, category_id })
       .then(response => {
-        const recipes = [...recipe, response.data];
-        this.setRecipes(recipes);
+        const plants = [...plant, response.data];
+        this.setPlants(plants);
       })
       .catch(error => {
         console.log(error);
@@ -40,10 +40,10 @@ const Recipe = () => {
 
   async function removeRecipe(id) {
     axios
-      .delete("/api/v1/recipes/" + id)
+      .delete("/api/v1/plants/" + id)
       .then(res => {
-        const recipes = recipe.filter(recipe => recipe.id !== id);
-        setRecipes(recipes);
+        const plants = plant.filter(plant => plant.id !== id);
+        setPlants(plants);
       })
       .catch(error => {
         console.log(error);
@@ -56,11 +56,12 @@ const Recipe = () => {
 
   const useStyles = makeStyles(theme => ({
     containerMargin: {
-      marginLeft: 50
+      marginLeft: 50,
+      marginRight: 100
     },
     button: {
       margin: theme.spacing(0.5),
-      background: "linear-gradient(to right, #83a4d4, #b6fbff)",
+      background: "linear-gradient(to right, #83a4d4, #83a4d4, #acb6e5)",
       borderRadius: 5,
       height: 50,
       width: 200,
@@ -72,6 +73,12 @@ const Recipe = () => {
     },
     font: {
       fontSize: 16
+    },
+    navCategories: {
+      justifyContent: "center"
+    },
+    formRecipe: {
+      padding: "5vh"
     }
   }));
 
@@ -79,28 +86,24 @@ const Recipe = () => {
   return (
     <div className={classes.containerMargin}>
       <Row className={classes.row}>
-        <Col>
+        <Col xs={4} className={classes.formRecipe}>
           <NewRecipe add={addNewList} />
         </Col>
 
-        <Col xs={12} md={8}>
+        <Col xs={8}>
           <Router>
-            <Nav defaultActiveKey="/recipes">
+            <Nav className={classes.navCategories} defaultActiveKey="/recipes">
               <Link to={"/recipes"}>
-                <button className={classes.button}>Starter</button>
+                <button className={classes.button}>Philodendron</button>
               </Link>
 
-              <Nav.Item>
-                <Link to={"/main"} className={classes.font}>
-                  <button className={classes.button}>Main</button>
-                </Link>
-              </Nav.Item>
+              <Link to={"/main"} className={classes.font}>
+                <button className={classes.button}>Aroids</button>
+              </Link>
 
-              <Nav.Item>
-                <Link to={"/dessert"} className={classes.font}>
-                  <button className={classes.button}>Dessert</button>
-                </Link>
-              </Nav.Item>
+              <Link to={"/dessert"} className={classes.font}>
+                <button className={classes.button}>Succulents</button>
+              </Link>
             </Nav>
 
             <Switch>
@@ -108,21 +111,21 @@ const Recipe = () => {
                 exact
                 path="/recipes"
                 component={() => (
-                  <Starter recipe={recipe} removeRecipe={removeRecipe} />
+                  <Starter plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
               <Route
                 exact
                 path="/main"
                 component={() => (
-                  <Main recipe={recipe} removeRecipe={removeRecipe} />
+                  <Main plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
               <Route
                 exact
                 path="/dessert"
                 component={() => (
-                  <Dessert recipe={recipe} removeRecipe={removeRecipe} />
+                  <Dessert plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
             </Switch>

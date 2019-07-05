@@ -2,15 +2,17 @@ import React from "react";
 import Welcome from "./components/Welcome";
 import Recipes from "./components/Recipes";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Navbar from "react-bootstrap/Navbar";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Link to={"/"} className="nav-link">
-          Home
-        </Link>
+        <Navbar bg="light">
+          <Navbar.Brand href="/">Home</Navbar.Brand>
+        </Navbar>
 
         <Switch>
           <Route exact path="/" component={() => <Welcome />} />

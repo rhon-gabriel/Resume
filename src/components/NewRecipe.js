@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
-import Card from "@material-ui/core/Card";
+import Button from "react-bootstrap/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    width: 350
+    width: 450,
+    height: 600
   },
   field: {
     height: 70
+  },
+  addButton: {
+    float: "right"
   }
 }));
 
 const NewRecipe = props => {
   const classes = useStyles();
-  const [title, setTitle] = useState("");
-  const [ingredients, setIngredients] = useState("");
+  const [name, setName] = useState("");
+  const [watering, setWatering] = useState("");
+  const [link, setLink] = useState("");
   const [body, setBody] = useState("");
   const [category_id, setCategory] = useState("");
 
@@ -27,75 +32,74 @@ const NewRecipe = props => {
   };
 
   return (
-    <Card className={classes.card}>
-      <Form onSubmit={() => props.add(title, ingredients, body, category_id)}>
-        <Form>
-          <Form.Control
-            className={classes.field}
-            type="text"
-            placeholder="Title"
-            onChange={handleChange(setTitle)}
-            required
-          />
-        </Form>
-
-        <Form>
-          <Form.Control
-            as="textarea"
-            rows="7"
-            type="text"
-            placeholder="Ingredients"
-            onChange={handleChange(setIngredients)}
-            required
-          />
-        </Form>
-
-        <FormGroup row>
-          <Form.Control
-            as="textarea"
-            rows="7"
-            type="text"
-            placeholder="Method"
-            onChange={handleChange(setBody)}
-            required
-          />
-        </FormGroup>
-
-        <Form.Check
-          inline
-          type="radio"
-          label="Starter"
-          name="categories"
-          id="starter"
-          value="1"
-          onChange={handleChange(setCategory)}
-          required
-        />
-        <Form.Check
-          inline
-          type="radio"
-          label="Main"
-          name="categories"
-          id="main"
-          value="2"
-          onChange={handleChange(setCategory)}
-          required
-        />
-        <Form.Check
-          inline
-          type="radio"
-          label="Dessert"
-          name="categories"
-          id="dessert"
-          value="3"
-          onChange={handleChange(setCategory)}
-          required
-        />
-      </Form>
-      <Button variant="primary" type="submit">
+    <Form
+      className={classes.card}
+      onSubmit={() => props.add(name, watering, link, body, category_id)}
+    >
+      <Form.Control
+        required
+        className={classes.field}
+        type="text"
+        placeholder="Name"
+        onChange={handleChange(setName)}
+      />
+      <Form.Control
+        required
+        className={classes.field}
+        type="text"
+        placeholder="Watering"
+        onChange={handleChange(setWatering)}
+      />
+      <Form.Control
+        required
+        className={classes.field}
+        type="text"
+        placeholder="Link"
+        onChange={handleChange(setLink)}
+      />
+      <Form.Control
+        required
+        as="textarea"
+        rows="8"
+        type="text"
+        placeholder="Care"
+        onChange={handleChange(setBody)}
+      />
+      <Form.Check
+        required
+        inline
+        type="radio"
+        label="Philodendron"
+        name="categories"
+        id="philodendron"
+        value="1"
+        onChange={handleChange(setCategory)}
+      />
+      <Form.Check
+        inline
+        type="radio"
+        label="Aroids"
+        name="categories"
+        id="aroids"
+        value="2"
+        onChange={handleChange(setCategory)}
+        required
+      />
+      <Form.Check
+        inline
+        type="radio"
+        label="Succulents"
+        name="categories"
+        id="succulents"
+        value="3"
+        onChange={handleChange(setCategory)}
+        required
+      />
+      <br />
+      <Button className={classes.addButton} variant="primary" type="submit">
         Add
       </Button>
-    </Card>
+    </Form>
   );
 };
 export default NewRecipe;
