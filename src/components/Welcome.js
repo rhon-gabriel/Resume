@@ -15,7 +15,7 @@ export default function Welcome() {
       <a href="/plants">
         <h2 className="enterButton">Enter</h2>
       </a>
-      <img src="https://bit.ly/32aA9ux" />
+      <img src="https://bit.ly/32aA9ux" alt="" />
     </div>
   );
 }

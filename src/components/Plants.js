@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Welcome from "./Welcome";
-import NewRecipe from "./NewRecipe";
-import Starter from "./categories/Starter";
-import Main from "./categories/Main";
-import Dessert from "./categories/Dessert";
+import Philodendron from "./categories/Philodendron";
+import Aroids from "./categories/Aroids";
+import Succulents from "./categories/Succulents";
 import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -64,13 +62,37 @@ const Recipe = () => {
       borderRadius: 5,
       height: 50,
       width: 200,
-      padding: "0 30px"
+      padding: "0 30px",
+      borderColor: "red pink orange red"
     },
     input: {
       display: "none"
     },
     navCategories: {
       justifyContent: "center"
+    },
+    textTable: {
+      border: "1px solid pink",
+      borderRadius: "5%",
+      width: 350,
+      height: 560,
+      display: "flex",
+      flexDirection: "column",
+      padding: "3vh",
+      textAlign: "justify"
+    },
+    img: {
+      width: 190,
+      height: 180,
+      borderRadius: "50%"
+    },
+    a: {
+      margin: "3vh 60px 0 60px"
+    },
+    cursive: {
+      fontStyle: "oblique",
+      fontSize: 22,
+      margin: "auto"
     }
   }));
 
@@ -79,10 +101,27 @@ const Recipe = () => {
     <div className={classes.containerMargin}>
       <Row className={classes.row}>
         <Col sm={3}>
-          <h1>lorem ipsum</h1>
-          <p>Aimas is a b</p>
-          <p>psyduck</p>
-          <NewRecipe add={addNewList} />
+          <div className={classes.textTable}>
+            <a
+              href="https://www.instagram.com/ronsgarden/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.a}
+            >
+              <img
+                src="https://bit.ly/2YHCYRC"
+                alt=""
+                className={classes.img}
+              />
+            </a>
+            <p className={classes.cursive}>The silence of growing things 🌱</p>
+            <p className={classes.txt}>
+              A simple container of plants with information about their origin
+              and how to take care of them. <br /> All stored plants in this
+              container are plants i currently own.
+            </p>
+            <span>Follow me on instagram for more plants related posts</span>
+          </div>
         </Col>
         <Col sm={9}>
           <Router>
@@ -91,11 +130,11 @@ const Recipe = () => {
                 <button className={classes.button}>Philodendron</button>
               </Link>
 
-              <Link to={"/main"}>
+              <Link to={"/aroids"}>
                 <button className={classes.button}>Aroids</button>
               </Link>
 
-              <Link to={"/dessert"}>
+              <Link to={"/succulents"}>
                 <button className={classes.button}>Succulents</button>
               </Link>
             </Nav>
@@ -105,21 +144,21 @@ const Recipe = () => {
                 exact
                 path="/plants"
                 component={() => (
-                  <Starter plant={plant} removeRecipe={removeRecipe} />
+                  <Philodendron plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
               <Route
                 exact
-                path="/main"
+                path="/aroids"
                 component={() => (
-                  <Main plant={plant} removeRecipe={removeRecipe} />
+                  <Aroids plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
               <Route
                 exact
-                path="/dessert"
+                path="/succulents"
                 component={() => (
-                  <Dessert plant={plant} removeRecipe={removeRecipe} />
+                  <Succulents plant={plant} removeRecipe={removeRecipe} />
                 )}
               />
             </Switch>

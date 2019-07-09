@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 import { red } from "@material-ui/core/colors";
@@ -80,7 +79,7 @@ const NewRecipe = props => {
         style={{ fontSize: 40 }}
         onClick={handleOpen}
       >
-        add
+        add_circle
       </Icon>
       <Button onClick={handleOpen} />
       <Modal

@@ -1,6 +1,6 @@
 import React from "react";
 import Welcome from "./components/Welcome";
-import Recipes from "./components/Recipes";
+import Plants from "./components/Plants";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,7 +16,7 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={() => <Welcome />} />
-          <Route exact path="/plants" component={() => <Recipes />} />
+          <Route exact path="/plants" component={() => <Plants />} />
         </Switch>
       </Router>
     </div>
