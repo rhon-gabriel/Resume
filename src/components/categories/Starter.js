@@ -1,78 +1,74 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { minHeight } from "@material-ui/system";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const useStyles = makeStyles(theme => ({
-  card: {
-    width: 300,
-    border: 4,
-    borderColor: "#83a4d4"
-  },
-  font: {
-    fontFamily: "Montserrat"
-  },
-  fontTitle: {
-    fontFamily: "Montserrat",
-    color: "#009fff"
-  },
   root: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center"
+    justifyContent: "space-around",
+    overflow: "hidden"
   },
   gridList: {
     width: 600,
     height: 500
   },
-  deleteButton: {
-    float: "right",
-    position: "relative",
-    marginTop: "-15px"
+  icon: {
+    color: "rgba(255, 255, 255, 0.54)"
   },
-  image: {
-    maxWidth: 200,
-    minHeight: 200,
-    margin: "auto"
+  img: {
+    borderRadius: "5%"
   }
 }));
 
 const Starter = props => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  function handleClickOpen() {
+    setOpen(true);
+  }
+
+  function handleClose() {
+    setOpen(false);
+  }
+
   return (
     <div className={classes.root}>
-      <GridList cellHeight={400} className={classes.gridList} cols={2}>
+      <GridList cellHeight={200} cols={3} className={classes.gridList}>
         {props.plant.map(plant =>
           plant.category_id === 1 ? (
-            <GridListTile>
-              <Card key={plant.id}>
-                <CardContent className={classes.card}>
-                  <IconButton
-                    color="secondary"
-                    aria-label="Delete"
-                    className={classes.deleteButton}
-                  >
-                    <DeleteIcon onClick={() => props.removeRecipe(plant.id)} />
-                  </IconButton>
-                  <Typography variant="h6" className={classes.fontTitle}>
-                    {plant.name}
-                  </Typography>
-                  <Typography className={classes.font}>
+            <GridListTile key={plant.id} id={plant.id}>
+              <img
+                src={plant.link}
+                alt="image"
+                className={classes.img}
+                key={plant.id}
+              />
+              <GridListTileBar
+                title={plant.name}
+                onClick={handleClickOpen}
+                key={plant.id}
+                id={plant.id}
+              />
+              <Dialog open={open} onClose={handleClose} id={plant.id}>
+                <DialogContent id={plant.id}>
+                  <DialogTitle id={plant.id}>{plant.name}</DialogTitle>
+                  <hr />
+                  <DialogContentText>
                     Watering: {plant.watering}
-                  </Typography>
-                  <img src={plant.link} alt="image" className={classes.image} />
-                  <Typography className={classes.font}>
+                    <hr />
                     Care: {plant.body}
-                  </Typography>
-                </CardContent>
-              </Card>
+                  </DialogContentText>
+                </DialogContent>
+              </Dialog>
             </GridListTile>
           ) : null
         )}

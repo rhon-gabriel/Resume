@@ -3,9 +3,31 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: -webkit-fill-available;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  width: 100%;
+  height: 100%;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.enterButton {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: linear-gradient(to right, #edc4e7 20%, #fff 40%, #4d7683 60%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }

@@ -1,17 +1,21 @@
 import React from "react";
-import Image from "react-bootstrap/Image";
-import Nav from "react-bootstrap/Nav";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles(theme => ({
+  mainDiv: {
+    position: "fixed",
+    top: "50%",
+    left: "50%"
+  }
+}));
 export default function Welcome() {
+  const classes = useStyles();
   return (
-    <div>
-      <Nav.Link href="/recipes">
-        <Image
-          width="300px"
-          src="https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg"
-          roundedCircle
-        />
-      </Nav.Link>
+    <div className={classes.mainDiv}>
+      <a href="/plants">
+        <h2 className="enterButton">Enter</h2>
+      </a>
+      <img src="https://bit.ly/32aA9ux" />
     </div>
   );
 }
