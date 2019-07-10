@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { addNewPlant } from "../../helpers";
 
 import Form from "react-bootstrap/Form";
 import { makeStyles } from "@material-ui/core/styles";
@@ -91,7 +92,9 @@ const NewRecipe = props => {
         <div style={modalStyle} className={classes.paper}>
           <Form
             className={classes.card}
-            onSubmit={() => props.add(name, watering, link, body, category_id)}
+            onSubmit={() =>
+              addNewPlant(props.plant, name, watering, link, body, category_id)
+            }
           >
             <Form.Control
               required

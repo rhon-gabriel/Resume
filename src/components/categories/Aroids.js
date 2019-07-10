@@ -3,7 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import SimpleModal from "./modal";
+import Modal from "./modal";
+import NewPlant from "../dashboard/NewPlant";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,7 +43,7 @@ const Starter = props => {
         {props.plant.map(plant =>
           plant.category_id === 2 ? (
             <GridListTile key={plant.id}>
-              <SimpleModal
+              <Modal
                 link={plant.link}
                 name={plant.name}
                 watering={plant.watering}
@@ -53,6 +54,7 @@ const Starter = props => {
             </GridListTile>
           ) : null
         )}
+        <NewPlant add={props.add} />
       </GridList>
     </div>
   );

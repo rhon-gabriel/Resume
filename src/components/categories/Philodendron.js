@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import SimpleModal from "./modal";
-import NewPlant from "../NewPlant";
+import NewPlant from "../dashboard/NewPlant";
 
 const useStyles = makeStyles(theme => ({
   root: {

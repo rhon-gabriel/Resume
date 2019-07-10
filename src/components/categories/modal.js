@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme => ({
   },
   titleBar: {
     background:
-      "linear-gradient(to bottom, rgba(204, 169, 169, 0.2) 0%, rgba(185, 132, 132, 0.3) 70%, rgba(142, 109, 109, 0.2) 100%)"
+      "linear-gradient(to bottom, rgba(204, 169, 169, 0.2) 0%, rgba(185, 132, 132, 0.3) 70%, rgba(142, 109, 109, 0.2) 100%)",
+    fontWeight: "bold",
+    fontSize: 12
   }
 }));
 
