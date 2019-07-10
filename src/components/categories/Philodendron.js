@@ -16,21 +16,6 @@ const useStyles = makeStyles(theme => ({
   gridList: {
     width: 600,
     height: 500
-  },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)"
-  },
-  img: {
-    borderRadius: "5%"
-  },
-  paper: {
-    position: "absolute",
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 4),
-    outline: "none"
   }
 }));
 

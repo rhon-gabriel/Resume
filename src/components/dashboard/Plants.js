@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     width: 200,
     padding: "0 30px",
     borderColor: "red pink orange red",
-    backgroundColor: "white"
+    backgroundImage: "linear-gradient(0deg, #fefefe 0%, #fefefe 100%)"
   },
   input: {
     display: "none"
