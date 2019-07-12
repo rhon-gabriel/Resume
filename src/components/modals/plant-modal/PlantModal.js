@@ -1,32 +1,15 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  StyledModal,
+  useStyles
+} from "../../modals/plant-modal/StyledPlantModal";
 
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-
-const useStyles = makeStyles(theme => ({
-  img: {
-    borderRadius: "5%",
-    width: 200,
-    height: 200
-  },
-  deleteBtn: {
-    width: "100%",
-    backgroundImage: "linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)",
-    color: "white"
-  },
-  titleBar: {
-    background:
-      "linear-gradient(to bottom, rgba(204, 169, 169, 0.2) 0%, rgba(185, 132, 132, 0.3) 70%, rgba(142, 109, 109, 0.2) 100%)",
-    fontWeight: "bold",
-    fontSize: 12
-  }
-}));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -70,7 +53,7 @@ const SimpleModal = props => {
           <hr />
         </DialogTitle>
 
-        <DialogContent>
+        <StyledModal className={classes.dialogContent}>
           <Row>
             <Col>
               <img src={props.link} alt="" className={classes.img} />
@@ -93,7 +76,7 @@ const SimpleModal = props => {
           >
             Delete
           </button>
-        </DialogContent>
+        </StyledModal>
       </Dialog>
     </div>
   );

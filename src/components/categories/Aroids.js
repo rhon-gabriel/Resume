@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import Modal from "./modal";
+import Modal from "../modals/plant-modal/PlantModal";
 import NewPlant from "../dashboard/NewPlant";
 
 const useStyles = makeStyles(theme => ({
@@ -22,16 +22,8 @@ const useStyles = makeStyles(theme => ({
   },
   img: {
     borderRadius: "5%"
-  },
-  paper: {
-    position: "absolute",
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 4),
-    outline: "none"
   }
+
 }));
 
 const Starter = props => {

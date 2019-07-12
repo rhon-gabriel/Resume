@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Welcome from "./components/Welcome";
-import Plants from "./components/dashboard/Plants";
+import Plants from "./components/dashboard/plants-section/Plants";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

@@ -1,68 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { fetchData } from "../../helpers";
+import { fetchData } from "../../../helpers";
+import { useStyles } from "../plants-section/StyledPlants";
 
-import Philodendron from "../categories/Philodendron";
-import Aroids from "../categories/Aroids";
-import Succulents from "../categories/Succulents";
-import CardAbout from "./CardAbout";
+import Philodendron from "../../categories/Philodendron";
+import Aroids from "../../categories/Aroids";
+import Succulents from "../../categories/Succulents";
+import CardAbout from "../about-card/CardAbout";
 
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles(theme => ({
-  containerMargin: {
-    display: "flex",
-    margin: "10vh 20px 20px 20px"
-  },
-  row: {
-    width: "100%"
-  },
-  button: {
-    margin: theme.spacing(0.5),
-    borderRadius: 5,
-    height: 50,
-    width: 200,
-    padding: "0 30px",
-    borderColor: "red pink orange red",
-    backgroundImage: "linear-gradient(0deg, #fefefe 0%, #fefefe 100%)"
-  },
-  input: {
-    display: "none"
-  },
-  navCategories: {
-    justifyContent: "center"
-  },
-  textTable: {
-    border: "1px solid pink",
-    borderRadius: "5%",
-    width: 350,
-    height: 560,
-    display: "flex",
-    flexDirection: "column",
-    padding: "3vh",
-    textAlign: "justify"
-  },
-  img: {
-    width: 190,
-    height: 180,
-    borderRadius: "50%"
-  },
-  a: {
-    margin: "3vh 60px 0 60px"
-  },
-  cursive: {
-    fontStyle: "oblique",
-    fontSize: 22,
-    margin: "auto"
-  }
-}));
 
 const Plant = () => {
+  const classes = useStyles();
   const [plant, setPlants] = useState([]);
+  useEffect(() => {
+    fetchData(setPlants);
+  }, []);
 
   async function removeRecipe(id) {
     axios
@@ -76,11 +32,6 @@ const Plant = () => {
       });
   }
 
-  useEffect(() => {
-    fetchData(setPlants);
-  }, []);
-
-  const classes = useStyles();
   return (
     <div className={classes.containerMargin}>
       <Row className={classes.row}>
