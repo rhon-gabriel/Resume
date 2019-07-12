@@ -12,3 +12,5 @@ It gives the possibility to add, edit and delete plants.
 - React Router
 - Material UI 
 - Bootstrap
+
+Rails served as api: https://github.com/rhon-gabriel/PlantHub-rails-backend
