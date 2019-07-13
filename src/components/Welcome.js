@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import leaf from "../assets/images/leaf.png";
 
 const useStyles = makeStyles(theme => ({
   mainDiv: {
@@ -15,7 +16,7 @@ export default function Welcome() {
       <a href="/plants">
         <h2 className="enterButton">Enter</h2>
       </a>
-      <img src="https://bit.ly/32aA9ux" alt="" />
+      <img src={leaf} alt="" />
     </div>
   );
 }

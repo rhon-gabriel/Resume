@@ -1,6 +1,7 @@
 import React from "react";
 import Welcome from "./components/Welcome";
 import Plants from "./components/dashboard/plants-section/Plants";
+import logoInitials from "./assets/images/logoInitials.png";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

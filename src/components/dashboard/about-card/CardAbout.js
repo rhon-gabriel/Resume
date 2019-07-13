@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { useStyles } from "../about-card/StyledCardAbout";
 import pic from "../../../assets/images/pictureCard.png";
 

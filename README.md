@@ -14,3 +14,8 @@ It gives the possibility to add, edit and delete plants.
 - Bootstrap
 
 Rails served as api: https://github.com/rhon-gabriel/PlantHub-rails-backend
+
+
+![alt text](https://imgur.com/NBdnbUy)
+![alt text](https://imgur.com/mvM9yig)
+![alt text](https://imgur.com/ycvMoYp)
