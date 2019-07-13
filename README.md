@@ -10,12 +10,11 @@ It gives the possibility to add, edit and delete plants.
 - React
 - States handled with hooks
 - React Router
-- Material UI 
+- Material UI
 - Bootstrap
 
 Rails served as api: https://github.com/rhon-gabriel/PlantHub-rails-backend
 
-
-![alt text](https://imgur.com/NBdnbUy)
-![alt text](https://imgur.com/mvM9yig)
-![alt text](https://imgur.com/ycvMoYp)
+![alt text](https://i.imgur.com/NBdnbUy.png)
+![alt text](https://i.imgur.com/mvM9yig.jpg)
+![alt text](https://i.imgur.com/ycvMoYp.png)
