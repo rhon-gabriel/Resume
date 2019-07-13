@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addNewPlant } from "../../helpers";
+import { addNewPlant } from "../../../helpers";
 
 import Form from "react-bootstrap/Form";
 import { makeStyles } from "@material-ui/core/styles";
