@@ -1,22 +1,15 @@
 import React from "react";
-import Welcome from "./components/Welcome";
+import WelcomePage from "./components/WelcomePage";
 import Plants from "./components/dashboard/plants-section/Plants";
-import logoInitials from "./assets/images/logoInitials.png";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from "react-bootstrap/Navbar";
-
 function App() {
   return (
-    <div className="App">
+    <div style={{padding: 15}}>
       <Router>
-        <Navbar bg="light" fixed="top" variant="light">
-          <Navbar.Brand href="/">Home</Navbar.Brand>
-        </Navbar>
-
         <Switch>
-          <Route exact path="/" component={() => <Welcome />} />
+          <Route exact path="/" component={() => <WelcomePage />} />
           <Route path="/plants" render={() => <Plants />} />
           <Route path="/aroids" render={() => <Plants />} />
           <Route path="/succulents" render={() => <Plants />} />

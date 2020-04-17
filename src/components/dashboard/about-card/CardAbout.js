@@ -1,6 +1,6 @@
 import React from "react";
 import { useStyles } from "../about-card/StyledCardAbout";
-import pic from "../../../assets/images/pictureCard.png";
+import pic from "../../../assets/images/plants.JPG";
 
 const CardAbout = () => {
   const classes = useStyles();
@@ -39,7 +39,7 @@ const CardAbout = () => {
               className={classes.icon}
             />
           </a>
-          <a href="mailto: rhoneil.gabriel@me.com" target="_blank">
+          <a href="mailto: rhoneil.gabriel@me.com" target="_blank" rel="noopener noreferrer">
             <img src="https://bit.ly/2JsOif8" alt="" className={classes.icon} />
           </a>
           <a
