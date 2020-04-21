@@ -1,73 +1,76 @@
 import React from "react";
 import leaf from "../assets/images/leaf.png";
-import CardAbout from './dashboard/about-card/CardAbout'
-import Header from './Header'
-import { Grid }from '@material-ui/core';
-import { withStyles } from "@material-ui/core/styles";
+import CardAbout from "./cards/CardAbout";
+import Header from "./Header";
+import Skills from "./cards/Skills";
+import { Grid, withStyles } from "@material-ui/core";
 
 export default function WelcomePage() {
-
   return (
     <Wrapper container>
-        <Grid item xs={12}>
-          <Header />
-        </Grid>
-        <Content container>
-          <Grid item xs={5} style={{padding: 10}}>
-            <div style={styles.cardDiv}>
-              <CardAbout style={styles.cardDiv}/>
-            </div>
-          </Grid>
-          <Grid item xs={7} style={styles.enterButtonContainer}>
-            <a href="/plants">
-              <h2 style={styles.enterButtonText}>Enter</h2>
-            </a>
-          </Grid>
-        </Content>
-        <Grid item xs={12}>
-          <img style={styles.image} src={leaf} alt="" />
-        </Grid>
+      <HeaderContainer item xs={12}>
+        <Header />
+      </HeaderContainer>
+      <Content container>
+        <CardAboutContainer item xs={5}>
+          <div style={styles.cardDiv}>
+            <CardAbout />
+          </div>
+        </CardAboutContainer>
+        <SkillsContainer item xs={7}>
+          <Skills />
+        </SkillsContainer>
+        <img style={styles.image} src={leaf} alt="plant image" />
+      </Content>
+      <Grid item xs={12}></Grid>
     </Wrapper>
   );
 }
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
   cardDiv: {
-    visibility: 'hidden',
-    animation: '10s fadeIn',
-    animationFillMode: 'forwards',
-  },
-  enterButtonContainer: {
-    padding: 120,
-    margin: 'auto'
-  },
-  enterButtonText: {
-    fontSize: 40,
-    fontWeight: 300,
-    background: 'linear-gradient(to right, #edc4e7 20%, #fff 40%, #4d7683 60%)',
-    backgroundSize: '200% auto',
-    backgroundClip: 'text',
-    webkitBackgroundClip: 'text',
-    webkitTextFillColor: 'transparent',
-    animation: 'textclip 4s linear infinite'
+    visibility: "hidden",
+    animation: "4s fadeIn",
+    animationFillMode: "forwards",
+    padding: 50,
   },
   image: {
     position: "fixed",
-    top: "50%",
-    left: "50%"
-  }
-}
+    top: 700,
+    left: "75%",
+    height: 300,
+    width: 600,
+  },
+};
 
 const Wrapper = withStyles({
   root: {
     flexGrow: 1,
-  }
+    height: "100%",
+  },
 })(Grid);
+
 const Content = withStyles({
   root: {
-    padding: 50
-  }
+    padding: 40,
+  },
+})(Grid);
+
+const HeaderContainer = withStyles({
+  root: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+})(Grid);
+
+const CardAboutContainer = withStyles({
+  root: {
+    padding: 10,
+  },
+})(Grid);
+
+const SkillsContainer = withStyles({
+  root: {
+    padding: 100,
+  },
 })(Grid);

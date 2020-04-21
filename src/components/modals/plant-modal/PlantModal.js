@@ -4,10 +4,13 @@ import {
   useStyles
 } from "../../modals/plant-modal/StyledPlantModal";
 
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Slide from "@material-ui/core/Slide";
+import { 
+  GridListTileBar, 
+  Dialog, 
+  DialogTitle, 
+  Slide,
+  Button
+ } from "@material-ui/core";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
@@ -60,26 +63,41 @@ const SimpleModal = props => {
             </Col>
             <Col>
               <p>
+                Family: <br />
+                {props.category}
+              </p>
+              <p>
                 Watering: <br />
                 {props.watering}
               </p>
 
               <p>
-                Care: <br />
+                Description: <br />
                 {props.body}
               </p>
             </Col>
           </Row>
-          <button
-            className={classes.deleteBtn}
-            onClick={() => props.removeRecipe(props.id)}
-          >
-            Delete
-          </button>
         </StyledModal>
+        <div style={{display: 'flex', justifyContent: 'center', marginBottom: 40}}>
+          <div style={{display: 'flex', justifyContent: 'space-between', width: 400}}>
+            <Button style={styles.button} variant="outlined" color="secondary">
+              Swap
+            </Button>
+            <Button style={styles.button} size="large" variant="outlined" color="primary">
+              Trade
+            </Button>
+          </div>
+        </div>
       </Dialog>
     </div>
   );
 };
 
 export default SimpleModal;
+
+const styles = {
+  button: {
+    width: 130, 
+    height: 60
+  }
+}

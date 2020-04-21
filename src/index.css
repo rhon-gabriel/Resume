@@ -1,14 +1,15 @@
+html, 
 body {
-  margin: 0;
+  height: 100%;
   font-family: 'Barlow', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: -webkit-fill-available;
 }
 
-/* a:hover {
+a:hover {
   text-decoration: none;
-} */
+}
 
 @keyframes textclip {
   to {
@@ -24,4 +25,16 @@ body {
     visibility: visible;
     opacity: 1;
   }
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+#section-2 {
+  background:url("./assets/images//forrest.jpg") center top no-repeat; 
+  background-position: fixed;
+  background-size: 100% 100%;
 }

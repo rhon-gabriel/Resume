@@ -1,22 +1,41 @@
 import React from "react";
 import WelcomePage from "./components/WelcomePage";
-import Plants from "./components/dashboard/plants-section/Plants";
+import Main from "./components/Main";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactFullpage from "@fullpage/react-fullpage";
 
-function App() {
+export default function App() {
   return (
-    <div style={{padding: 15}}>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={() => <WelcomePage />} />
-          <Route path="/plants" render={() => <Plants />} />
-          <Route path="/aroids" render={() => <Plants />} />
-          <Route path="/succulents" render={() => <Plants />} />
-        </Switch>
-      </Router>
-    </div>
+    <ReactFullpage
+      scrollOverflow={true}
+      render={({ fullpageApi }) => {
+        return (
+          <div id="fullpage-wrapper">
+            <div className="section section1">
+              <WelcomePage />
+            </div>
+
+            <div className="section" id="section-2">
+              <div className="slide">
+                <Main />
+              </div>
+              <div className="slide">
+                Education
+              </div>
+            </div>
+
+            <div className="section">
+              <h3>Skills</h3>
+              <button onClick={() => fullpageApi.moveTo(1, 0)}>Move top</button>
+            </div>
+
+            <div className="section">
+              <h3>Hobbies</h3>
+              <button onClick={() => fullpageApi.moveTo(1, 0)}>Move top</button>
+            </div>
+          </div>
+        );
+      }}
+    />
   );
 }
-
-export default App;

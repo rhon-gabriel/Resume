@@ -1,30 +1,13 @@
 import axios from "axios";
 
-export async function fetchData(setPlants) {
-  const res = await fetch("/api/v1/plants");
-  res
-    .json()
-    .then(res => setPlants(res.plant))
-    .catch(error => {
-      console.log(error);
-    });
-}
+const corsHeroku = 'https://cors-anywhere.herokuapp.com'
+const api = 'https://planthubtm.herokuapp.com'
 
-export async function addNewPlant(
-  plant,
-  name,
-  watering,
-  link,
-  body,
-  category_id
-) {
-  axios
-    .post("/api/v1/plants", { name, watering, link, body, category_id })
-    .then(response => {
-      const plants = [...plant, response.data];
-      this.setPlants(plants);
-    })
-    .catch(error => {
-      console.log(error);
+export async function getPlants(setPlants) {
+  const res = await axios.get(`${corsHeroku}/${api}/plants`)
+    .then(res => setPlants(res.data))
+    .catch(err => {
+      console.log(err, 'err getPlants');
     });
+    return res
 }
