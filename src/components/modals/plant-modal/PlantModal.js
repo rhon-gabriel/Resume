@@ -11,8 +11,8 @@ import {
   Slide,
   Button
  } from "@material-ui/core";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -57,7 +57,7 @@ const SimpleModal = props => {
         </DialogTitle>
 
         <StyledModal className={classes.dialogContent}>
-          <Row>
+          {/* <Row>
             <Col>
               <img src={props.link} alt="" className={classes.img} />
             </Col>
@@ -75,8 +75,8 @@ const SimpleModal = props => {
                 Description: <br />
                 {props.body}
               </p>
-            </Col>
-          </Row>
+            </Col> */}
+          {/* </Row> */}
         </StyledModal>
         <div style={{display: 'flex', justifyContent: 'center', marginBottom: 40}}>
           <div style={{display: 'flex', justifyContent: 'space-between', width: 400}}>

@@ -67,7 +67,7 @@ const styles = {
   large: {
     animation: "flickerAnimation 7s infinite",
     fontSize: 45,
-    background: "linear-gradient(to right, #009fff, #ec2f4b",
+    background: "linear-gradient(to right, #8a2387, #e94057, #f27121)",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },

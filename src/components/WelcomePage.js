@@ -1,45 +1,57 @@
 import React from "react";
-import leaf from "../assets/images/leaf.png";
+import profile from "../assets/images/profile.JPG";
 import CardAbout from "./cards/CardAbout";
 import Header from "./Header";
 import Skills from "./cards/Skills";
 import { Grid, withStyles } from "@material-ui/core";
+import KeyboardArrowDownRoundedIcon from "@material-ui/icons/KeyboardArrowDownRounded";
 
-export default function WelcomePage() {
+export default function WelcomePage(props) {
+  const { scroll } = props
   return (
     <Wrapper container>
       <HeaderContainer item xs={12}>
         <Header />
       </HeaderContainer>
+
       <Content container>
         <CardAboutContainer item xs={5}>
           <div style={styles.cardDiv}>
-            <CardAbout />
+            <CardAbout img={profile} title={"a little about me"} />
           </div>
         </CardAboutContainer>
         <SkillsContainer item xs={7}>
           <Skills />
         </SkillsContainer>
-        <img style={styles.image} src={leaf} alt="plant image" />
       </Content>
-      <Grid item xs={12}></Grid>
+
+      <BottomContainer container direction="column" align="center">
+        <div
+          style={styles.exploreButton}
+          onClick={() => scroll.moveSectionDown()}
+        >
+          Explore more
+          <KeyboardArrowDownRoundedIcon />
+        </div>
+      </BottomContainer>
     </Wrapper>
   );
 }
 
 const styles = {
   cardDiv: {
-    visibility: "hidden",
-    animation: "4s fadeIn",
-    animationFillMode: "forwards",
     padding: 50,
   },
   image: {
-    position: "fixed",
-    top: 700,
-    left: "75%",
-    height: 300,
-    width: 600,
+    height: 250,
+    width: 450,
+  },
+  exploreButton: {
+    color: "#434343",
+    cursor: "pointer",
+    fontSize: 18,
+    display: "flex",
+    flexDirection: "column",
   },
 };
 
@@ -50,27 +62,43 @@ const Wrapper = withStyles({
   },
 })(Grid);
 
-const Content = withStyles({
+const HeaderContainer = withStyles({
   root: {
-    padding: 40,
+    flexGrow: 1,
+    padding: 10,
   },
 })(Grid);
 
-const HeaderContainer = withStyles({
+const Content = withStyles({
   root: {
-    paddingLeft: 20,
-    paddingRight: 20,
+    flexGrow: 1,
   },
 })(Grid);
 
 const CardAboutContainer = withStyles({
   root: {
-    padding: 10,
+    flexGrow: 1,
+    display: "flex",
+    justifyContent: "center",
   },
 })(Grid);
 
 const SkillsContainer = withStyles({
   root: {
-    padding: 100,
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+})(Grid);
+
+const BottomContainer = withStyles({
+  root: {
+    flexGrow: 1,
+    justifyContent: "center",
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: 'center',
+    animation: 'heartbeat 3s ease infinite both'
   },
 })(Grid);

@@ -1,40 +1,45 @@
 html, 
 body {
   height: 100%;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: -webkit-fill-available;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-@keyframes flickerAnimation {
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
+/* BACKGROUND FOR EACH SECTION */
+#section-1 {
+  background:url("./assets/images/main6.jpg") center top no-repeat; 
+  background-position: fixed;
+  background-size: 100% 100%;
+  opacity: 0.9;
 }
 
 #section-2 {
-  background:url("./assets/images//forrest.jpg") center top no-repeat; 
+  background:url("./assets/images/main.jpg") center top no-repeat;
   background-position: fixed;
   background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+#section-3 {
+  background:url("./assets/images/intro2.jpg") center top no-repeat; 
+  background-position: fixed;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+#section-4 {
+  background:url("./assets/images/interests.jpg") center top no-repeat; 
+  background-position: fixed;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+/* NAVIGATION */
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background-color:#f64f59
 }
