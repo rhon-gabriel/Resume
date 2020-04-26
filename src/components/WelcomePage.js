@@ -2,9 +2,8 @@ import React from "react";
 import profile from "../assets/images/profile.JPG";
 import CardAbout from "./cards/CardAbout";
 import Header from "./Header";
-import Skills from "./cards/Skills";
+import SkillsBackground from "./cards/SkillsBackground";
 import { Grid, withStyles } from "@material-ui/core";
-import KeyboardArrowDownRoundedIcon from "@material-ui/icons/KeyboardArrowDownRounded";
 
 export default function WelcomePage(props) {
   const { scroll } = props
@@ -21,7 +20,7 @@ export default function WelcomePage(props) {
           </div>
         </CardAboutContainer>
         <SkillsContainer item xs={7}>
-          <Skills />
+          <SkillsBackground />
         </SkillsContainer>
       </Content>
 
@@ -31,7 +30,6 @@ export default function WelcomePage(props) {
           onClick={() => scroll.moveSectionDown()}
         >
           Explore more
-          <KeyboardArrowDownRoundedIcon />
         </div>
       </BottomContainer>
     </Wrapper>

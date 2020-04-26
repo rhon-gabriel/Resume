@@ -9,8 +9,9 @@ export default function ExperienceCard (props) {
         </div>
       <div style={styles.textContainer}>
         <p style={styles.txt}>
-          is designed to be space for plant parents to SWAP and TRADE their plants.  New to the plant parenthood? PlantHub is the rigth space for you!
-          Bump up your knowledge on plants and get tips from other plant people like you.
+        My working experiences, from the social field to operation and now, as a software developer, 
+        shaped my analytical and communication skills. These experience, also trained me to work under pressure and manage my time effectively;
+        Furthermore, as a general feedback I get from everyone, is my interpersonal skills, as easy going person with the ability to contribute effectively in team-based.
         </p>
       </div>
     </div>

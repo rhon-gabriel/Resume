@@ -1,6 +1,5 @@
 import React from "react";
 import InstagramEmbed from "react-instagram-embed";
-import Footer from "../Footer";
 import { Grid, withStyles } from "@material-ui/core";
 
 export default function Interests() {
@@ -28,9 +27,6 @@ export default function Interests() {
           />
         </Grid>
       </Content>
-      <BottomContainer item xs={12}>
-        <Footer />
-      </BottomContainer>
     </Wrapper>
   );
 }
@@ -42,7 +38,7 @@ const styles = {
     left: "-10%",
     transform: "scale(0) translateX(-10vw)",
     willChange: "transform",
-    animation: "fly-right-one 10s",
+    animation: "fly-right-one 8s",
     animationTimingFunction: "linear",
     animationIterationCount: "infinite",
   },
@@ -90,14 +86,5 @@ const Wrapper = withStyles({
 const Content = withStyles({
   root: {
     flexGrow: 1,
-  },
-})(Grid);
-
-const BottomContainer = withStyles({
-  root: {
-    flexGrow: 1,
-    justifyContent: "center",
-    display: "flex",
-    alignItems: "center",
   },
 })(Grid);

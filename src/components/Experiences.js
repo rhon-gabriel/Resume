@@ -1,82 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
-import woshapp from "../assets/images/woshapp.png";
-
-const arr = [
-  {
-    name: "Woshapp",
-    date: "Sept 2019 - Present",
-    logo: woshapp,
-    description: `Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.`,
-    icons: [
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-    ],
-  },
-  {
-    name: "Woshapp",
-    date: "Sept 2019 - Present",
-    logo: woshapp,
-    description: `Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.`,
-    icons: [
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-    ],
-  },
-  {
-    name: "Woshapp",
-    date: "Sept 2019 - Present",
-    logo: woshapp,
-    description: `Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.`,
-    icons: [
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-    ],
-  },
-  {
-    name: "Woshapp",
-    date: "Sept 2019 - Present",
-    logo: woshapp,
-    description: `Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.
-  Full-stack developer working on Woshapp’s web, iOS and android app.`,
-    icons: [
-      "https://image.flaticon.com/icons/svg/145/145807.svg",
-      "https://bit.ly/2JsOif8",
-      "https://bit.ly/2uxDUds",
-    ],
-  },
-];
+import { getExperiences } from "../helpers";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 export default function Experiences() {
+  const [experiences, setExperiences] = useState();
+  const [isLoading, setIsLoading] = useState();
+
+  const loadExperiences = async (setIsLoading, setExperiences) => {
+    setIsLoading(true);
+    try {
+      await getExperiences(setExperiences);
+    } catch (err) {
+      console.log("err loadexperience:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadExperiences(setIsLoading, setExperiences);
+  }, []);
+
   return (
     <Wrapper>
-      <h1 style={styles.frontText}>
-        {"Experience"}
-      </h1>
+      <h1 style={styles.frontText}>{"Experience"}</h1>
+        <PacmanLoader
+          color={"#ff0080"}
+          loading={isLoading}
+        />
       <Container>
-        {arr &&
-          arr.map((el) => {
+        {experiences &&
+          experiences.map((el) => {
             return (
               <Card>
                 <Grid Container>
@@ -111,7 +67,7 @@ export default function Experiences() {
 
 const styles = {
   frontText: {
-    margin: 10,
+    marginTop: "3vh",
     fontSize: 34,
     fontWeight: 400,
     fontFamily: "Raleway",
@@ -136,8 +92,8 @@ const styles = {
     "-webkit-text-fill-color": "transparent",
   },
   img: {
-    width: 110,
-    height: 110,
+    width: 100,
+    height: 100,
     borderRadius: "50%",
     boxShadow: "0 0 0.5rem #d1f2fd",
     position: "absolute",
@@ -165,7 +121,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   position: absolute;
   top: 15vh;
-  left: calc(50% - 600px);
+  left: calc(50% - 500px);
   display: flex;
 `;
 
@@ -201,15 +157,15 @@ const Card = styled.div`
   position: relative;
   left: 0px;
   &:not(:first-child) {
-    margin-right: -90px;
+    margin-right: -40px;
   }
   &:hover {
-    transform: translateY(-20px);
+    transform: translateY(-40px);
     transition: 0.4s ease-out;
   }
   &:hover ~ div {
     position: relative;
-    left: 100px;
+    left: 80px;
     transition: 0.4s ease-out;
 `;
 const IconContainer = styled.div`

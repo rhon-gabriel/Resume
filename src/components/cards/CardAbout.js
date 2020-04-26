@@ -1,4 +1,5 @@
 import React from "react";
+
 import netflix from "../../assets/images/netflix.png";
 import camera from "../../assets/images/camera.png";
 import hike from "../../assets/images/hike.png";
@@ -7,28 +8,20 @@ import coding from "../../assets/images/coding.png";
 import leaves from "../../assets/images/leaves.png";
 
 const CardAbout = (props) => {
-  const { img, title } = props;
+  const { img } = props;
 
   return (
     <div style={styles.card}>
-      <img
-        src={img}
-        alt="profile pic"
-        style={styles.img}
-      />
+      <img src={img} alt="profile pic" style={styles.img} />
       <div style={styles.textContainer}>
-        <h1 style={styles.frontText}>{title}</h1>
+        <div style={styles.name}>Rhoneil Gabriel</div>
+        <h4 style={styles.profession}>Full Stack Developer</h4>
         <p style={styles.text}>
-          Hi, my name is Rhon! I am a software developer and indoor gardener on
-          my spare time!
+          Hi! My name is Rhon, I am a software developer by profession and
+          indoor gardener on my spare time! <br /> Graduated from 2 intensive
+          coding bootcamps where I learned Ruby and Javascript.
         </p>
-        <p style={styles.text}>
-          {" "}
-          Graduated from 2 intensive coding bootcamps where I learned the basics
-          of Ruby and Javascript, skills that I further developed in the field
-          as a<span style={styles.styledText}>full stack developer.</span>
-        </p>
-        <p style={styles.text}>Interests:</p>
+        <p style={styles.text}>some of my interests:</p>
         <div style={styles.iconDiv}>
           <img
             className="rotate-in-center"
@@ -92,10 +85,11 @@ const styles = {
     width: 200,
     height: 200,
     borderRadius: "50%",
-    boxShadow: "0 0px 5px rgba(0,0,0, 0.9), 2px 2px 10px rgb(156,186,169, 4)",
+    boxShadow:
+      "0px 2px 25px 0px rgb(126,255,202), 0px 0px 0px 2px rgb(126,255,202, 0.5)",
     position: "absolute",
     opacity: 0.9,
-    animation: 'slide-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'
+    animation: "slide-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
   },
   icon: {
     width: 35,
@@ -108,26 +102,29 @@ const styles = {
   textContainer: {
     marginTop: "15vh",
   },
-  frontText: {
+  name: {
     marginTop: 10,
     padding: 5,
-    fontSize: 35,
+    fontSize: 25,
     animation: "text-focus-in 2s",
     animationFillMode: "cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
-    fontFamily: "Caveat",
-    letterSpacing: "-.20px",
-    transform: "translateX(-70px)",
-    background: "linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99)",
+    justifyContent: "center",
+    display: "flex",
+    background: "linear-gradient(to right, #40e0d0, #ff8c00, #ff0080)",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
+  },
+  profession: {
+    fontSize: 16,
+    animation: "text-focus-in 2s",
+    animationFillMode: "cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
+    justifyContent: "center",
+    display: "flex",
+    letterSpacing: 2,
+    color: "#434343",
   },
   text: {
     color: "#434343",
     lineHeight: 1.5,
-  },
-  styledText: {
-    background: "linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99)",
-    "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent",
   },
 };
