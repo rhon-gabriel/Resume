@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import netflix from "../../assets/images/netflix.png";
 import camera from "../../assets/images/camera.png";
@@ -11,8 +12,8 @@ const CardAbout = (props) => {
   const { img } = props;
 
   return (
-    <div style={styles.card}>
-      <img src={img} alt="profile pic" style={styles.img} />
+    <Card>
+      <ProfilePic src={img} alt="profile pic" />
       <div style={styles.textContainer}>
         <div style={styles.name}>Rhoneil Gabriel</div>
         <h4 style={styles.profession}>Full Stack Developer</h4>
@@ -20,7 +21,7 @@ const CardAbout = (props) => {
           Hi! My name is Rhon, I am a software developer by profession and
           indoor gardener on my spare time! <br /> Graduated from 2 intensive
           coding bootcamps where I learned Ruby and Javascript.
-          <br/> some of my interests:
+          <br /> some of my interests:
         </p>
         <div style={styles.iconDiv}>
           <img
@@ -61,36 +62,13 @@ const CardAbout = (props) => {
           />
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
 export default CardAbout;
 
 const styles = {
-  card: {
-    position: "relative",
-    borderRadius: 12,
-    width: 380,
-    height: 550,
-    display: "flex",
-    flexDirection: "column",
-    padding: 20,
-    textAlign: "justify",
-    boxShadow: "5px 2px 5px rgba(0,0,0, .08), 2px 5px 5px rgb(147,163,175, 4)",
-    marginTop: 20,
-  },
-  img: {
-    margin: "3vh 60px 0 60px",
-    width: 200,
-    height: 200,
-    borderRadius: "50%",
-    boxShadow:
-      "0px 2px 25px 0px rgb(126,255,202), 0px 0px 0px 2px rgb(126,255,202, 0.5)",
-    position: "absolute",
-    opacity: 0.9,
-    animation: "slide-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
-  },
   icon: {
     width: 35,
     margin: 5,
@@ -98,7 +76,7 @@ const styles = {
   iconDiv: {
     display: "flex",
     justifyContent: "center",
-    marginTop: '5vh'
+    marginTop: "5vh",
   },
   textContainer: {
     marginTop: "15vh",
@@ -127,6 +105,49 @@ const styles = {
   text: {
     color: "#434343",
     lineHeight: 1.5,
-    marginTop: '5vh'
+    marginTop: "5vh",
   },
 };
+
+const Card = styled.div`
+  position: relative;
+  border-radius: 12px;
+  width: 380px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: justify;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.08), 2px 5px 5px rgb(147, 163, 175, 4);
+  margin-top: 20px;
+  @media (max-width: 600px) {
+    width: 280px;
+    height: 550px;
+  }
+`;
+
+const ProfilePic = styled.img`
+  margin: 3vh 60px 0 60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 2px 25px 0px rgb(126, 255, 202),
+    0 0 0 2px rgb(126, 255, 202, 0.5);
+  position: absolute;
+  opacity: 0.9px;
+  animation: slide-top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @media (max-width: 600px) {
+    width: 180px;
+    height: 180px;
+    margin: 3vh 30px 0 30px;
+  }
+`;
+
+const Icon = styled.img`
+  width: 35,
+  margin: 5,
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 2.5px;
+  }
+`;

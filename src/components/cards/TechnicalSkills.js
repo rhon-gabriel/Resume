@@ -23,21 +23,24 @@ export default function TechnicalSkills() {
         {skills &&
           skills.map((el) => {
             return (
-              <SkillsContainer key={el._id}>
-                <h6>{el.tech}</h6>
-                <CircularBarContainer>
-                  <CircularProgressbarWithChildren value={el.percentage}>
-                    <img
-                      style={styles.circularBarImage}
-                      src={el.logo}
-                      alt={el.tech}
-                    />
-                    <div style={styles.circularBarText}>
-                      <strong>{`${el.percentage}%`}</strong>
-                    </div>
-                  </CircularProgressbarWithChildren>
-                </CircularBarContainer>
-              </SkillsContainer>
+              <div>
+                <SkillsContainer key={el._id}>
+                  <h6>{el.tech}</h6>
+                  <CircularBarContainer>
+                    <CircularProgressbarWithChildren value={el.percentage}>
+                      <img
+                        style={styles.circularBarImage}
+                        src={el.logo}
+                        alt={el.tech}
+                      />
+                      <div style={styles.circularBarText}>
+                        <strong>{`${el.percentage}%`}</strong>
+                      </div>
+                    </CircularProgressbarWithChildren>
+                  </CircularBarContainer>
+                </SkillsContainer>
+                {/* <MobileSkillsContainer>{el.tech}</MobileSkillsContainer> */}
+              </div>
             );
           })}
       </List>
@@ -81,6 +84,9 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 10px;
+  @media (max-width: 600px) {
+    padding: 2px;
+  }
 `;
 
 const List = styled.div`
@@ -96,10 +102,18 @@ const SkillsContainer = styled.div`
   color: "#434343";
   width: 100%;
   height: 100%;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const CircularBarContainer = styled.div`
   width: 90px;
   height: 90px;
   padding: 2px;
+`;
+
+const MobileSkillsContainer = styled.div`
+  background-color: "pink";
 `;

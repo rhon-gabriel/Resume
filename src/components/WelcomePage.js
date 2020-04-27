@@ -6,7 +6,7 @@ import SkillsBackground from "./cards/SkillsBackground";
 import { Grid, withStyles } from "@material-ui/core";
 
 export default function WelcomePage(props) {
-  const { scroll } = props
+  const { scroll } = props;
   return (
     <Wrapper container>
       <HeaderContainer item xs={12}>
@@ -78,6 +78,9 @@ const CardAboutContainer = withStyles({
     flexGrow: 1,
     display: "flex",
     justifyContent: "center",
+    ["@media (max-width:600px)"]: {
+      margin: "auto",
+    },
   },
 })(Grid);
 
@@ -87,6 +90,9 @@ const SkillsContainer = withStyles({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
+    ["@media (max-width:600px)"]: {
+      display: "none",
+    },
   },
 })(Grid);
 
@@ -95,8 +101,8 @@ const BottomContainer = withStyles({
     flexGrow: 1,
     justifyContent: "center",
     display: "flex",
-    flexDirection: 'column',
-    alignItems: 'center',
-    animation: 'heartbeat 3s ease infinite both'
+    flexDirection: "column",
+    alignItems: "center",
+    animation: "heartbeat 3s ease infinite both",
   },
 })(Grid);

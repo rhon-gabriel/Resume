@@ -1,6 +1,7 @@
 import React from "react";
 import InstagramEmbed from "react-instagram-embed";
 import { Grid, withStyles } from "@material-ui/core";
+import styled from "styled-components";
 
 export default function Interests() {
   return (
@@ -9,23 +10,42 @@ export default function Interests() {
         <div style={styles.birdContainer}>
           <div style={styles.bird}></div>
         </div>
-        <Grid item xs={3}>
+        <Container>
+          <Grid item xs={3}>
+            <div style={styles.description}>
+              <h4 style={styles.firstText}>In my spare time,</h4>
+              <h4 style={styles.secondText}>I am an indoor</h4>
+              <h3 style={styles.thirdText}>GARDENER</h3>
+            </div>
+          </Grid>
+          <Grid style={styles.instagram} item xs={9}>
+            <InstagramEmbed
+              url="https://www.instagram.com/p/B-q3eUug2iT/"
+              maxWidth={400}
+              hideCaption={false}
+              containerTagName="div"
+              protocol=""
+              injectScript
+            />
+          </Grid>
+        </Container>
+        <MobileContainer>
           <div style={styles.description}>
             <h4 style={styles.firstText}>In my spare time,</h4>
             <h4 style={styles.secondText}>I am an indoor</h4>
             <h3 style={styles.thirdText}>GARDENER</h3>
           </div>
-        </Grid>
-        <Grid style={styles.instagram} item xs={9}>
-          <InstagramEmbed
-            url="https://www.instagram.com/p/B-q3eUug2iT/"
-            maxWidth={400}
-            hideCaption={false}
-            containerTagName="div"
-            protocol=""
-            injectScript
-          />
-        </Grid>
+          <InstagramContainer>
+            <InstagramEmbed
+              url="https://www.instagram.com/p/B-q3eUug2iT/"
+              maxWidth={400}
+              hideCaption={false}
+              containerTagName="div"
+              protocol=""
+              injectScript
+            />
+          </InstagramContainer>
+        </MobileContainer>
       </Content>
     </Wrapper>
   );
@@ -43,7 +63,8 @@ const styles = {
     animationIterationCount: "infinite",
   },
   bird: {
-    background: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg)",
+    background:
+      "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg)",
     backgroundSize: "auto 100%",
     width: 88,
     height: 125,
@@ -53,7 +74,7 @@ const styles = {
     animationIterationCount: "infinite",
   },
   description: {
-    marginTop: '5vh',
+    marginTop: "5vh",
   },
   firstText: {
     marginLeft: "2vw",
@@ -88,3 +109,21 @@ const Content = withStyles({
     flexGrow: 1,
   },
 })(Grid);
+
+const Container = styled.div`
+  padding-top: 10vh;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const MobileContainer = styled.div`
+  padding-top: 2vh;
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;
+
+const InstagramContainer = styled.div`
+  margin-left: 15px;
+`;

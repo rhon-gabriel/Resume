@@ -26,10 +26,7 @@ export default function Experiences() {
   return (
     <Wrapper>
       <h1 style={styles.frontText}>{"Experience"}</h1>
-        <PacmanLoader
-          color={"#ff0080"}
-          loading={isLoading}
-        />
+      <PacmanLoader color={"#ff0080"} loading={isLoading} />
       <Container>
         {experiences &&
           experiences.map((el) => {
@@ -61,6 +58,30 @@ export default function Experiences() {
             );
           })}
       </Container>
+      <MobileContainer>
+        {experiences &&
+          experiences.map((el) => {
+            return (
+              <MobileCard>
+                <Grid Container>
+                  <Grid item xs={8} style={styles.titleContainer}>
+                    <h1 style={styles.title}>{el.name}</h1>
+                    <h6>{el.date}</h6>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <img src={el.logo} alt="company logo" style={styles.img} />
+                  </Grid>
+                </Grid>
+                <Content>
+                  <Bar />
+                  <MobileTextContainer>
+                    <p>{el.description}</p>
+                  </MobileTextContainer>
+                </Content>
+              </MobileCard>
+            );
+          })}
+      </MobileContainer>
     </Wrapper>
   );
 }
@@ -123,6 +144,9 @@ const Container = styled.div`
   top: 15vh;
   left: calc(50% - 500px);
   display: flex;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
@@ -149,7 +173,7 @@ const Card = styled.div`
   display: flex;
   height: 500px;
   width: 360px;
-  background-color: rgb(64,64,64, 1);
+  background-color: rgb(64, 64, 64, 1);
   border-radius: 10px;
   box-shadow: 0 0 2rem #d1f2fd;
   margin-left: -25px;
@@ -167,6 +191,7 @@ const Card = styled.div`
     position: relative;
     left: 80px;
     transition: 0.4s ease-out;
+  }
 `;
 const IconContainer = styled.div`
   position: absolute;
@@ -175,4 +200,50 @@ const IconContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding: 10;
+`;
+
+const MobileContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10vh;
+  margin-left: 2vw;
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;
+
+const MobileCard = styled.div`
+  display: flex;
+  height: 300px;
+  width: 360px;
+  background-color: rgb(64, 64, 64, 1);
+  border-radius: 10px;
+  box-shadow: 0 0 2rem #d1f2fd;
+  transition: 0.4s ease-out;
+  position: relative;
+  &:not(:first-child) {
+    margin-top: -160px;
+  }
+  &:hover {
+    transform: translateY(-100px);
+    transition: 0.4s ease-out;
+    z-index: 1;
+  }
+  &:hover ~ div {
+    position: relative;
+    left: 60px;
+    transition: 0.4s ease-out;
+    z-index: 1;
+    margin-top: -100px;
+  }
+`;
+
+const MobileTextContainer = styled.div`
+  color: white;
+  margin-top: 1vh;
+  width: 340px;
+  height: 140px;
+  position: relative;
 `;
