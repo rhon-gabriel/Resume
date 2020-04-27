@@ -20,8 +20,8 @@ const CardAbout = (props) => {
           Hi! My name is Rhon, I am a software developer by profession and
           indoor gardener on my spare time! <br /> Graduated from 2 intensive
           coding bootcamps where I learned Ruby and Javascript.
+          <br/> some of my interests:
         </p>
-        <p style={styles.text}>some of my interests:</p>
         <div style={styles.iconDiv}>
           <img
             className="rotate-in-center"
@@ -98,6 +98,7 @@ const styles = {
   iconDiv: {
     display: "flex",
     justifyContent: "center",
+    marginTop: '5vh'
   },
   textContainer: {
     marginTop: "15vh",
@@ -126,5 +127,6 @@ const styles = {
   text: {
     color: "#434343",
     lineHeight: 1.5,
+    marginTop: '5vh'
   },
 };
