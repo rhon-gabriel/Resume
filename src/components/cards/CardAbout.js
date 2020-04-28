@@ -25,40 +25,34 @@ const CardAbout = (props) => {
         </p>
         <div style={styles.iconDiv}>
           <img
-            className="rotate-in-center"
+            className="rotate-in-center icon-interest"
             src={coding}
             alt="coding"
-            style={styles.icon}
           />
           <img
-            className="puff-in-center"
+            className="puff-in-center icon-interest"
             src={camera}
             alt="photography"
-            style={styles.icon}
           />
           <img
-            className="scale-down-center"
+            className="scale-down-center icon-interest"
             src={netflix}
             alt="movies"
-            style={styles.icon}
           />
           <img
-            className="rotate-in-center"
+            className="rotate-in-center icon-interest"
             src={leaves}
             alt="plants"
-            style={styles.icon}
           />
           <img
-            className="swirl-in-fwd"
+            className="swirl-in-fwd icon-interest"
             src={travel}
             alt="travel"
-            style={styles.icon}
           />
           <img
-            className="rotate-in-center"
+            className="rotate-in-center icon-interest"
             src={hike}
             alt="hiking"
-            style={styles.icon}
           />
         </div>
       </div>
@@ -122,7 +116,7 @@ const Card = styled.div`
   margin-top: 20px;
   @media (max-width: 600px) {
     width: 300px;
-    height: 550px;
+    height: 525px;
   }
 `;
 
@@ -142,3 +136,4 @@ const ProfilePic = styled.img`
     margin: 3vh 30px 0 30px;
   }
 `;
+

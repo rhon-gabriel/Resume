@@ -37,7 +37,7 @@ export default function Interests() {
         <h4 style={styles.firstText}>In my spare time,</h4>
         <h4 style={styles.secondText}>I am an indoor</h4>
         <h3 style={styles.thirdText}>GARDENER</h3>
-        <div style={{margin: 10}}>
+        <div style={{margin: 25}}>
           <InstagramEmbed
             url="https://www.instagram.com/p/B-q3eUug2iT/"
             maxWidth={400}

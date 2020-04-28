@@ -43,3 +43,17 @@ body {
 .fp-slidesNav ul li a.active span {
   background-color:#f64f59
 }
+
+.icon-interest {
+  width: 35px;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px)
+{
+  .icon-interest {
+    width: 25px;
+    margin: 5px;
+  }
+
+}
