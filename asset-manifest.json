@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Resume/static/css/main.612f1285.chunk.css",
-    "main.js": "/Resume/static/js/main.be18deaf.chunk.js",
-    "main.js.map": "/Resume/static/js/main.be18deaf.chunk.js.map",
-    "runtime~main.js": "/Resume/static/js/runtime~main.e4c3d92c.js",
-    "runtime~main.js.map": "/Resume/static/js/runtime~main.e4c3d92c.js.map",
-    "static/css/2.09ae8418.chunk.css": "/Resume/static/css/2.09ae8418.chunk.css",
-    "static/js/2.a610babc.chunk.js": "/Resume/static/js/2.a610babc.chunk.js",
-    "static/js/2.a610babc.chunk.js.map": "/Resume/static/js/2.a610babc.chunk.js.map",
+    "main.css": "/Resume/static/css/main.163933e3.chunk.css",
+    "main.js": "/Resume/static/js/main.0bbcd66b.chunk.js",
+    "main.js.map": "/Resume/static/js/main.0bbcd66b.chunk.js.map",
+    "runtime-main.js": "/Resume/static/js/runtime-main.45eb8f82.js",
+    "runtime-main.js.map": "/Resume/static/js/runtime-main.45eb8f82.js.map",
+    "static/css/2.f524894f.chunk.css": "/Resume/static/css/2.f524894f.chunk.css",
+    "static/js/2.89c65e76.chunk.js": "/Resume/static/js/2.89c65e76.chunk.js",
+    "static/js/2.89c65e76.chunk.js.map": "/Resume/static/js/2.89c65e76.chunk.js.map",
     "index.html": "/Resume/index.html",
-    "precache-manifest.db600efc20a7050a173c66ed7d4102c8.js": "/Resume/precache-manifest.db600efc20a7050a173c66ed7d4102c8.js",
+    "precache-manifest.5f779670a8ea38aa3c6ed5fee7b880ff.js": "/Resume/precache-manifest.5f779670a8ea38aa3c6ed5fee7b880ff.js",
     "service-worker.js": "/Resume/service-worker.js",
-    "static/css/2.09ae8418.chunk.css.map": "/Resume/static/css/2.09ae8418.chunk.css.map",
-    "static/css/main.612f1285.chunk.css.map": "/Resume/static/css/main.612f1285.chunk.css.map",
+    "static/css/2.f524894f.chunk.css.map": "/Resume/static/css/2.f524894f.chunk.css.map",
+    "static/css/main.163933e3.chunk.css.map": "/Resume/static/css/main.163933e3.chunk.css.map",
+    "static/js/2.89c65e76.chunk.js.LICENSE.txt": "/Resume/static/js/2.89c65e76.chunk.js.LICENSE.txt",
     "static/media/camera.png": "/Resume/static/media/camera.ba9c7f6d.png",
     "static/media/coding.png": "/Resume/static/media/coding.395cdb58.png",
     "static/media/github.png": "/Resume/static/media/github.d22ee372.png",
@@ -22,5 +23,12 @@
     "static/media/netflix.png": "/Resume/static/media/netflix.75ced7c4.png",
     "static/media/profile.JPG": "/Resume/static/media/profile.8a893cd2.JPG",
     "static/media/travel.png": "/Resume/static/media/travel.5e601897.png"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.45eb8f82.js",
+    "static/css/2.f524894f.chunk.css",
+    "static/js/2.89c65e76.chunk.js",
+    "static/css/main.163933e3.chunk.css",
+    "static/js/main.0bbcd66b.chunk.js"
+  ]
 }
