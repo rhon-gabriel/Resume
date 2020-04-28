@@ -121,7 +121,7 @@ const Card = styled.div`
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.08), 2px 5px 5px rgb(147, 163, 175, 4);
   margin-top: 20px;
   @media (max-width: 600px) {
-    width: 280px;
+    width: 300px;
     height: 550px;
   }
 `;
@@ -140,14 +140,5 @@ const ProfilePic = styled.img`
     width: 180px;
     height: 180px;
     margin: 3vh 30px 0 30px;
-  }
-`;
-
-const Icon = styled.img`
-  width: 35,
-  margin: 5,
-  @media (max-width: 600px) {
-    width: 30px;
-    height: 2.5px;
   }
 `;

@@ -5,37 +5,20 @@ import styled from "styled-components";
 
 export default function Interests() {
   return (
+    <div>
     <Wrapper>
       <Content container>
         <div style={styles.birdContainer}>
           <div style={styles.bird}></div>
         </div>
-        <Container>
-          <Grid item xs={3}>
-            <div style={styles.description}>
-              <h4 style={styles.firstText}>In my spare time,</h4>
-              <h4 style={styles.secondText}>I am an indoor</h4>
-              <h3 style={styles.thirdText}>GARDENER</h3>
-            </div>
-          </Grid>
-          <Grid style={styles.instagram} item xs={9}>
-            <InstagramEmbed
-              url="https://www.instagram.com/p/B-q3eUug2iT/"
-              maxWidth={400}
-              hideCaption={false}
-              containerTagName="div"
-              protocol=""
-              injectScript
-            />
-          </Grid>
-        </Container>
-        <MobileContainer>
+        <Grid item xs={3}>
           <div style={styles.description}>
             <h4 style={styles.firstText}>In my spare time,</h4>
             <h4 style={styles.secondText}>I am an indoor</h4>
             <h3 style={styles.thirdText}>GARDENER</h3>
           </div>
-          <InstagramContainer>
+        </Grid>
+        <Grid style={styles.instagram} item xs={9}>
             <InstagramEmbed
               url="https://www.instagram.com/p/B-q3eUug2iT/"
               maxWidth={400}
@@ -44,10 +27,28 @@ export default function Interests() {
               protocol=""
               injectScript
             />
-          </InstagramContainer>
-        </MobileContainer>
+        </Grid>
       </Content>
     </Wrapper>
+    <MobileContainer>
+        <div style={styles.birdContainer}>
+          <div style={styles.bird}></div>
+        </div>
+        <h4 style={styles.firstText}>In my spare time,</h4>
+        <h4 style={styles.secondText}>I am an indoor</h4>
+        <h3 style={styles.thirdText}>GARDENER</h3>
+        <div style={{margin: 10}}>
+          <InstagramEmbed
+            url="https://www.instagram.com/p/B-q3eUug2iT/"
+            maxWidth={400}
+            hideCaption={false}
+            containerTagName="div"
+            protocol=""
+            injectScript
+          />
+        </div>
+      </MobileContainer>
+    </div>
   );
 }
 
@@ -107,23 +108,14 @@ const Wrapper = withStyles({
 const Content = withStyles({
   root: {
     flexGrow: 1,
+    ["@media (max-width:600px)"]: {
+      display: "none",
+    },
   },
 })(Grid);
 
-const Container = styled.div`
-  padding-top: 10vh;
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
 const MobileContainer = styled.div`
-  padding-top: 2vh;
-  @media (min-width: 600px) {
-    display: none;
-  }
-`;
-
-const InstagramContainer = styled.div`
-  margin-left: 15px;
+@media (min-width: 600px) {
+  display: none
+}
 `;

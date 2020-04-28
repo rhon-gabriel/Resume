@@ -73,15 +73,18 @@ const ProfileContainer = styled.div`
 `;
 
 const ExperienceContainer = styled.div`
-  height: 550px, 
-  width: 450px, 
-  background-color: 'rgb(204,201,195, 0.5)',
-  border-radius: 6px,
-  box-shadow: '0 0 2px rgba(0,0,0, .08), 2px 2px 5px rgb(254,218,222, 3)',
+  height: 550px; 
+  width: 350px; 
+  background-color: 'rgb(204,201,195, 0.5)';
+  border-radius: 6px;
+  box-shadow: '0 0 2px rgba(0,0,0, .08), 2px 2px 5px rgb(254,218,222, 3)';
 `;
 
 const MobileContent = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 15vh;
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
