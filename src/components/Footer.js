@@ -11,10 +11,6 @@ export default function Header() {
 
 const styles = {
   headerWrapper: {
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "center",
-    // alignItems: "center",
   },
   nameLogoContainer: {
     width: 200,

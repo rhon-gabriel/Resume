@@ -94,7 +94,7 @@ const styles = {
     "-webkit-text-fill-color": "transparent",
   },
   instagram: {
-    paddingTop: "10vh",
+    paddingTop: "5vh",
   },
 };
 
@@ -115,7 +115,11 @@ const Content = withStyles({
 })(Grid);
 
 const MobileContainer = styled.div`
-@media (min-width: 600px) {
-  display: none
-}
+  flex-grow: 1; 
+  height: 100%;
+  width: 100%;
+  @media (min-width: 600px) {
+    display: none
+  }
 `;
+

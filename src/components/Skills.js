@@ -7,25 +7,25 @@ import { Grid, withStyles } from "@material-ui/core";
 
 export default function Skills() {
   return (
-    <Wrapper container className="slide-in-fwd-center">
-      <Content container className="slide-in-fwd-center">
-        <Grid item xs={5} style={styles.experienceWrapper}>
-          <ExperienceContainer>
+    <Wrapper>
+      <Container container className="slide-in-fwd-center">
+        <Content container className="slide-in-fwd-center">
+          <Grid item xs={5} style={styles.experienceWrapper}>
+            <ExperienceContainer>
+              <TechnicalSkills />
+            </ExperienceContainer>
+          </Grid>
+          <Grid item xs={7} style={styles.experienceWrapper}>
+            <ProfileContainer>
+              <ProfileCard />
+            </ProfileContainer>
+          </Grid>
+        </Content>
+      </Container>
+        <MobileContent>
             <TechnicalSkills />
-          </ExperienceContainer>
-        </Grid>
-        <Grid item xs={7} style={styles.experienceWrapper}>
-          <ProfileContainer>
-            <ProfileCard />
-          </ProfileContainer>
-        </Grid>
-      </Content>
-      <MobileContent>
-        <ExperienceContainer>
-          <TechnicalSkills />
-        </ExperienceContainer>
-      </MobileContent>
-    </Wrapper>
+        </MobileContent>
+      </Wrapper>
   );
 }
 
@@ -49,7 +49,7 @@ const styles = {
   },
 };
 
-const Wrapper = withStyles({
+const Container = withStyles({
   root: {
     flexGrow: 1,
     minHeight: "100%",
@@ -64,6 +64,11 @@ const Content = withStyles({
     },
   },
 })(Grid);
+
+const Wrapper = styled.div`
+  flex-grow: 1; 
+  min-Height: 100%;
+`;
 
 const ProfileContainer = styled.div`
   justify-content: center;
@@ -81,10 +86,8 @@ const ExperienceContainer = styled.div`
 `;
 
 const MobileContent = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 15vh;
-  @media (min-width: 600px) {
+  align-items: center;
+  @media only screen and (min-width: 600px)  {
     display: none;
   }
 `;

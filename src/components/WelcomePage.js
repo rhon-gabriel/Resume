@@ -3,35 +3,38 @@ import profile from "../assets/images/profile.JPG";
 import CardAbout from "./cards/CardAbout";
 import Header from "./Header";
 import SkillsBackground from "./cards/SkillsBackground";
+import styled from "styled-components";
 import { Grid, withStyles } from "@material-ui/core";
 
 export default function WelcomePage(props) {
   const { scroll } = props;
   return (
-    <Wrapper container>
-      <HeaderContainer item xs={12}>
-        <Header />
-      </HeaderContainer>
+    <Wrapper>
+      <Container container>
+        <HeaderContainer item xs={12}>
+          <Header />
+        </HeaderContainer>
 
-      <Content container>
-        <CardAboutContainer item xs={5}>
-          <div style={styles.cardDiv}>
-            <CardAbout img={profile} title={"a little about me"} />
+        <Content container>
+          <CardAboutContainer item xs={5}>
+            <div style={styles.cardDiv}>
+              <CardAbout img={profile} title={"a little about me"} />
+            </div>
+          </CardAboutContainer>
+          <SkillsContainer item xs={7}>
+            <SkillsBackground />
+          </SkillsContainer>
+        </Content>
+
+        <BottomContainer container direction="column" align="center">
+          <div
+            style={styles.exploreButton}
+            onClick={() => scroll.moveSectionDown()}
+          >
+            Explore more
           </div>
-        </CardAboutContainer>
-        <SkillsContainer item xs={7}>
-          <SkillsBackground />
-        </SkillsContainer>
-      </Content>
-
-      <BottomContainer container direction="column" align="center">
-        <div
-          style={styles.exploreButton}
-          onClick={() => scroll.moveSectionDown()}
-        >
-          Explore more
-        </div>
-      </BottomContainer>
+        </BottomContainer>
+      </Container>
     </Wrapper>
   );
 }
@@ -53,7 +56,13 @@ const styles = {
   },
 };
 
-const Wrapper = withStyles({
+const Wrapper = styled.div`
+  flex-grow: 1; 
+  height: 100%;
+  width: 100%;
+`;
+
+const Container = withStyles({
   root: {
     flexGrow: 1,
     height: "100%",

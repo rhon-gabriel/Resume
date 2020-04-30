@@ -4,12 +4,26 @@ import { getSkills } from "../../helpers/index";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import styled from "styled-components";
+import PacmanLoader from "react-spinners/PacmanLoader";
+
 
 export default function TechnicalSkills() {
   const [skills, setSkills] = useState();
+  const [isLoading, setIsLoading] = useState();
+
+  const loadSkills = async (setIsLoading, setSkills) => {
+    setIsLoading(true);
+    try {
+      await getSkills(setSkills);
+    } catch (err) {
+      console.log("err loadSkills:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    getSkills(setSkills);
+    loadSkills(setIsLoading, setSkills);
   }, []);
 
   return (
@@ -19,6 +33,7 @@ export default function TechnicalSkills() {
           Technical Skills
         </h1>
       </div>
+      <PacmanLoader color={"#7effca"} loading={isLoading} />
       <List>
         {skills &&
           skills.map((el) => {

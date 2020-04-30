@@ -12,6 +12,7 @@ export default function App() {
     <ReactFullpage
       navigation
       scrollSpeed={500}
+      scrollHorizontally = {true}
       render={({ fullpageApi }) => {
         return (
           <div>

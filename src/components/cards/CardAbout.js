@@ -24,33 +24,27 @@ const CardAbout = (props) => {
           <br /> some of my interests:
         </p>
         <div style={styles.iconDiv}>
-          <img
-            className="rotate-in-center icon-interest"
+          <Icon
             src={coding}
             alt="coding"
           />
-          <img
-            className="puff-in-center icon-interest"
+          <Icon
             src={camera}
             alt="photography"
           />
-          <img
-            className="scale-down-center icon-interest"
+          <Icon
             src={netflix}
             alt="movies"
           />
-          <img
-            className="rotate-in-center icon-interest"
+          <Icon
             src={leaves}
             alt="plants"
           />
-          <img
-            className="swirl-in-fwd icon-interest"
+          <Icon
             src={travel}
             alt="travel"
           />
-          <img
-            className="rotate-in-center icon-interest"
+          <Icon
             src={hike}
             alt="hiking"
           />
@@ -134,6 +128,16 @@ const ProfilePic = styled.img`
     width: 180px;
     height: 180px;
     margin: 3vh 30px 0 30px;
+  }
+`;
+
+const Icon = styled.img`
+  width: 35px;
+  margin: 5px;
+  animation: scale-down-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  @media (max-width: 600px) {
+    width: 30px;
+    margin: 3px;
   }
 `;
 
