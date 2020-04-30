@@ -136,8 +136,9 @@ const Icon = styled.img`
   margin: 5px;
   animation: scale-down-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @media (max-width: 600px) {
-    width: 30px;
-    margin: 3px;
+    width: 25px;
+    margin: 2px;
+    animation: none !important;
   }
 `;
 
