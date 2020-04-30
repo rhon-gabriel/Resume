@@ -68,6 +68,8 @@ const styles = {
   },
   textContainer: {
     marginTop: "15vh",
+    flex: 1,
+    overflow: 'hidden'
   },
   name: {
     marginTop: 10,
@@ -101,7 +103,7 @@ const Card = styled.div`
   position: relative;
   border-radius: 12px;
   width: 380px;
-  height: 550px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -109,8 +111,8 @@ const Card = styled.div`
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.08), 2px 5px 5px rgb(147, 163, 175, 4);
   margin-top: 20px;
   @media (max-width: 600px) {
-    width: 300px;
-    height: 525px;
+    width: 330px;
+    min-height: 550px;
   }
 `;
 
@@ -127,7 +129,7 @@ const ProfilePic = styled.img`
   @media (max-width: 600px) {
     width: 180px;
     height: 180px;
-    margin: 3vh 30px 0 30px;
+    margin: 3vh 50px 0 50px;
   }
 `;
 
@@ -136,7 +138,7 @@ const Icon = styled.img`
   margin: 5px;
   animation: scale-down-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @media (max-width: 600px) {
-    width: 25px;
+    width: 10%;
     margin: 2px;
     animation: none !important;
   }
