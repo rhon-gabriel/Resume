@@ -206,8 +206,8 @@ const MobileContainer = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 10vh;
+  height: 100%;
+  margin-top: 5vh;
   margin-left: 2vw;
   @media (min-width: 600px) {
     display: none;
@@ -224,19 +224,19 @@ const MobileCard = styled.div`
   transition: 0.4s ease-out;
   position: relative;
   &:not(:first-child) {
-    margin-top: -160px;
+    margin-top: -150px;
   }
   &:hover {
-    transform: translateY(-100px);
+    transform: translateY(-90px);
     transition: 0.4s ease-out;
     z-index: 1;
   }
   &:hover ~ div {
     position: relative;
-    left: 30px;
-    transition: 0.4s ease-out;
+    left: 20px;
+    transition: 0.6s ease-out;
     z-index: 1;
-    margin-top: -100px;
+    margin-top: -90px;
   }
 `;
 

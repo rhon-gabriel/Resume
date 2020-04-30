@@ -9,25 +9,25 @@ body {
 
 /* BACKGROUND FOR EACH SECTION */
 #section-1 {
-  background:url("./assets/images/main6.jpg") center top no-repeat; 
+  background:url("./assets/images/section1.jpg") center top no-repeat; 
   background-position: fixed;
   background-size: 100% 100%;
 }
 
 #section-2 {
-  background:url("./assets/images/main.jpg") center top no-repeat;
+  background:url("./assets/images/section2.jpg") center top no-repeat;
   background-position: fixed;
   background-size: 100% 100%;
 }
 
 #section-3 {
-  background:url("./assets/images/intro2.jpg") center top no-repeat;
+  background:url("./assets/images/section3.jpg") center top no-repeat;
   background-position: fixed;
   background-size: 100% 100%;
 }
 
 #section-4 {
-  background:url("./assets/images/interests.jpg") center top no-repeat; 
+  background:url("./assets/images/section4.jpg") center top no-repeat; 
   background-position: fixed;
   background-size: 100% 100%;
 }

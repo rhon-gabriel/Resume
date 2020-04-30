@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import netflix from "../../assets/images/netflix.png";
-import camera from "../../assets/images/camera.png";
-import hike from "../../assets/images/hike.png";
-import travel from "../../assets/images/travel.png";
-import coding from "../../assets/images/coding.png";
-import leaves from "../../assets/images/leaves.png";
-
 const CardAbout = (props) => {
   const { img } = props;
 
@@ -17,37 +10,19 @@ const CardAbout = (props) => {
       <div style={styles.textContainer}>
         <div style={styles.name}>Rhoneil Gabriel</div>
         <h4 style={styles.profession}>Full Stack Developer</h4>
-        <p style={styles.text}>
-          Hi! My name is Rhon, I am a software developer by profession and
-          indoor gardener on my spare time! <br /> Graduated from 2 intensive
-          coding bootcamps where I learned Ruby and Javascript.
-          <br /> some of my interests:
-        </p>
-        <div style={styles.iconDiv}>
-          <Icon
-            src={coding}
-            alt="coding"
-          />
-          <Icon
-            src={camera}
-            alt="photography"
-          />
-          <Icon
-            src={netflix}
-            alt="movies"
-          />
-          <Icon
-            src={leaves}
-            alt="plants"
-          />
-          <Icon
-            src={travel}
-            alt="travel"
-          />
-          <Icon
-            src={hike}
-            alt="hiking"
-          />
+        <div style={styles.paragraph}>
+          <p style={styles.text}>
+            Hi! My name is Rhon, I am a software developer by profession and
+            indoor gardener on my spare time! 
+          </p>
+          <p style={styles.text}>
+            Graduated from 2 intensive coding bootcamps, 
+            where I learned Ruby and Javascript
+          </p>
+          <p style={styles.text}>
+            Currently employed as Full-Stack Developer, working mainly 
+            with React/React Native and Node.js
+          </p>
         </div>
       </div>
     </Card>
@@ -57,14 +32,6 @@ const CardAbout = (props) => {
 export default CardAbout;
 
 const styles = {
-  icon: {
-    width: 35,
-    margin: 5,
-  },
-  iconDiv: {
-    display: "flex",
-    justifyContent: "center"
-  },
   textContainer: {
     marginTop: "15vh",
     flex: 1,
@@ -91,10 +58,13 @@ const styles = {
     letterSpacing: 2,
     color: "#434343",
   },
+  paragraph: {
+    marginTop: '5vh'
+  },
   text: {
     color: "#434343",
     lineHeight: 1.5,
-    marginTop: "5vh",
+    marginTop: "2vh"
   },
 };
 
@@ -131,15 +101,3 @@ const ProfilePic = styled.img`
     margin: 3vh 50px 0 50px;
   }
 `;
-
-const Icon = styled.img`
-  width: 35px;
-  margin: 5px;
-  animation: scale-down-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  @media (max-width: 600px) {
-    width: 15;
-    margin: 2px;
-    animation: none !important;
-  }
-`;
-
