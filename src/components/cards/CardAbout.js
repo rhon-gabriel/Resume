@@ -63,8 +63,7 @@ const styles = {
   },
   iconDiv: {
     display: "flex",
-    justifyContent: "center",
-    marginTop: "5vh",
+    justifyContent: "center"
   },
   textContainer: {
     marginTop: "15vh",
@@ -112,7 +111,7 @@ const Card = styled.div`
   margin-top: 20px;
   @media (max-width: 600px) {
     width: 330px;
-    min-height: 550px;
+    min-height: 500px;
   }
 `;
 
@@ -138,7 +137,7 @@ const Icon = styled.img`
   margin: 5px;
   animation: scale-down-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @media (max-width: 600px) {
-    width: 10%;
+    width: 15;
     margin: 2px;
     animation: none !important;
   }

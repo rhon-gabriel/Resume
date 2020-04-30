@@ -137,7 +137,7 @@ const styles = {
 };
 
 const Wrapper = styled.div`
-  min-height: 100%;
+  height: 100%;
 `;
 const Container = styled.div`
   position: absolute;
@@ -233,7 +233,7 @@ const MobileCard = styled.div`
   }
   &:hover ~ div {
     position: relative;
-    left: 60px;
+    left: 30px;
     transition: 0.4s ease-out;
     z-index: 1;
     margin-top: -100px;
