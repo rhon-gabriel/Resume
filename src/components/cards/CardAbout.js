@@ -12,7 +12,8 @@ const CardAbout = (props) => {
         <h4 style={styles.profession}>Full Stack Developer</h4>
         <div style={styles.paragraph}>
           <p style={styles.text}>
-            Hi! Thanks for checking my resume! <br/> I am Rhon and I am a software developer by profession and
+            Hi! <br/>  
+            Thanks for checking my resume!I am Rhon and I am a software developer by profession and
             indoor gardener on my spare time! 
           </p>
           <p style={styles.text}>
@@ -38,8 +39,7 @@ const styles = {
     overflow: 'hidden'
   },
   name: {
-    marginTop: '2vh',
-    padding: 5,
+    marginTop: '3vh',
     fontSize: 25,
     animation: "text-focus-in 2s",
     animationFillMode: "cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
@@ -61,7 +61,7 @@ const styles = {
     color: "#434343",
   },
   paragraph: {
-    marginTop: '5vh'
+    marginTop: '3vh'
   },
   text: {
     color: "#434343",
