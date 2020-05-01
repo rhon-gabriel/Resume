@@ -11,8 +11,10 @@ export default function App() {
   return (
     <ReactFullpage
       navigation
-      scrollSpeed={500}
-      scrollHorizontally = {true}
+      scrollSpeed={1000}
+      scrollHorizontally={true}
+      fitToSection={true}
+      fadingEffect={true}
       render={({ fullpageApi }) => {
         return (
           <div>

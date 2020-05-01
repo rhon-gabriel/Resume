@@ -67,7 +67,7 @@ const ExploreButton = styled.div`
   font-size: 18px;
   display: flex;
   @media (min-width: 600px) {
-    font-size: 28px;
+    font-size: 22px;
   }
 `;
 

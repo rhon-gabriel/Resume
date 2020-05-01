@@ -68,6 +68,7 @@ const Content = withStyles({
 const Wrapper = styled.div`
   flex-grow: 1; 
   min-Height: 100%;
+  width: 100%;
 `;
 
 const ProfileContainer = styled.div`

@@ -1,22 +1,19 @@
 import React from "react";
 import github from "../assets/images/github.png";
+import styled from "styled-components";
 
 export default function Header() {
   return (
     <div style={styles.headerWrapper}>
-      <div style={styles.nameLogoContainer} className="tracking-in-expand">
-        <h1 style={styles.nameLogoText}>Rhoneil Gabriel</h1>
-      </div>
       <div style={styles.iconDiv}>
         <a
           href="https://www.linkedin.com/in/rhoneilgabriel/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Icon
             src="https://image.flaticon.com/icons/svg/145/145807.svg"
             alt="linkedin"
-            style={styles.icon}
           />
         </a>
         <a
@@ -24,14 +21,14 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="https://bit.ly/2JsOif8" alt="email" style={styles.icon} />
+          <Icon src="https://bit.ly/2JsOif8" alt="email" />
         </a>
         <a
           href="https://github.com/rhon-gabriel"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={github} alt="github" style={styles.icon} />
+          <Icon src={github} alt="github" />
         </a>
       </div>
     </div>
@@ -42,7 +39,7 @@ const styles = {
   headerWrapper: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   nameLogoContainer: {
@@ -55,10 +52,6 @@ const styles = {
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },
-  icon: {
-    width: 35,
-    margin: 5,
-  },
   iconDiv: {
     display: "flex",
     justifyContent: "center",
@@ -66,3 +59,12 @@ const styles = {
       "scale-down-center  1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
   },
 };
+
+const Icon = styled.img`
+  width: 35px;
+  margin: 5px;
+  @media (max-width: 600px) {
+    width: 30px;
+    margin: 5px;
+  }
+`;

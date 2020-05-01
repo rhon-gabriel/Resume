@@ -11,9 +11,9 @@ export default function ProfileCard(props) {
         <p style={styles.txt}>
           My working experiences, from the social field to operation and now, as
           a software developer, shaped my analytical and communication skills.
-          These experience, also trained me to work under pressure and manage my
+          These experiences, also trained me to work under pressure and manage my
           time effectively; Furthermore, as a general feedback I get from
-          everyone, is my interpersonal skills, as easy going person with the
+          everyone, is my interpersonal skills. I am an easy going person and great
           ability to contribute effectively in team-based.
         </p>
       </div>
@@ -49,8 +49,8 @@ const styles = {
   },
   txt: {
     color: "#434343",
-    fontFamily: "Caveat",
-    fontSize: 22,
+    fontFamily: "Raleway",
+    fontSize: 20,
   },
   frontText: {
     marginTop: 10,

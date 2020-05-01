@@ -70,6 +70,8 @@ const styles = {
     fontFamily: "Raleway",
     letterSpacing: "-.20px",
     background: "linear-gradient(to right, #dd5e89, #f7bb97)",
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },
@@ -108,6 +110,7 @@ const styles = {
 
 const Wrapper = styled.div`
   height: 100%;
+  flex: 1;
 `;
 const Container = styled.div`
   position: absolute;
@@ -119,9 +122,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     left: calc(50% - 165px);
-    height: 100%;
-    top: 10vh;
     margin-left: 2vw;
+    flex: 1;
   }
   @media (min-width: 600px) and (max-width: 800px){
     position: absolute;
@@ -131,6 +133,7 @@ const Container = styled.div`
     height: 100%;
     top: 5vh;
     margin-left: 2vw;
+    flex: 1;
   }
   @media (min-width: 800px) and (max-width: 1024px) {
     position: absolute;
@@ -139,6 +142,7 @@ const Container = styled.div`
     flex-direction: column;
     left: calc(50% - 220px);
     height: 100%;
+    flex: 1;
   }
 `;
 
@@ -157,8 +161,13 @@ const TextContainer = styled.div`
   width: 340px;
   height: 340px;
   position: relative;
+  font-size: 18px;
+  @media (max-width: 600px) {
+    height: 160px;
+    width: 340px;
+    font-size: 16px;
+  }
   @media (min-width: 600px) and (max-width: 800px) {
-    margin-top: 1vh;
     height: 140px;
     width: 400px;
     font-size: 22px;
@@ -200,29 +209,30 @@ const Card = styled.div`
     transition: 0.4s ease-out;
   }
   @media (max-width: 600px) {
-    height: 300px;
+    height: 315px;
     width: 360px;
     &:not(:first-child) {
-      margin-top: -150px;
+      margin-top: -215px;
     }
     &:hover {
-      transform: translateY(-90px);
+      transform: translateY(-50px);
       transition: 0.4s ease-out;
-      z-index: 1;
+      // z-index: 1;
     }
     &:hover ~ div {
       position: relative;
-      left: 20px;
+      left: 10px;
       transition: 0.6s ease-out;
-      z-index: 1;
+      // z-index: 1;
       margin-top: -90px;
     }
   }
   @media (min-width: 600px) and (max-width: 800px){
     height: 420px;
     width: 500px;
+    top: 10vh;
     &:not(:first-child) {
-      margin-top: -150px;
+      margin-top: -250px;
     }
     &:hover {
       transform: translateY(-90px);
@@ -239,18 +249,19 @@ const Card = styled.div`
   }
   @media (min-width: 800px) and (max-width: 1024px) {
     width: 600px;
-    height: 600px;
+    height: 500px;
+    top: 15vh;
     &:not(:first-child) {
-      margin-top: -100px;
+      margin-top: -350px;
     }
     &:hover {
-      transform: translateY(-90px) translateX(-90px);
+      transform: translateY(-100px) translateX(-3px);
       transition: 0.4s ease-out;
       z-index: 1;
     }
     &:hover ~ div {
       position: relative;
-      left: 200px;
+      left: 100px;
       transition: 0.6s ease-out;
       z-index: 1;
       margin-top: -120px;

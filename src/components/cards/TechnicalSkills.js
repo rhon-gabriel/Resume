@@ -88,7 +88,7 @@ const styles = {
     marginTop: -5,
   },
   circularBarText: {
-    fontSize: 12,
+    fontSize: 16,
     marginTop: -5,
   },
 };

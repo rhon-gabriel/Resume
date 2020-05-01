@@ -40,8 +40,8 @@ export default function Interests() {
         <div style={{margin: 25}}>
           <InstagramEmbed
             url="https://www.instagram.com/p/B-q3eUug2iT/"
-            maxWidth={400}
-            hideCaption={false}
+            maxWidth={300}
+            hideCaption={true}
             containerTagName="div"
             protocol=""
             injectScript
