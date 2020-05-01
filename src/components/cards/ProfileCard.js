@@ -77,7 +77,7 @@ const Card = styled.div`
   boxShadow: 0 0 2px rgba(0,0,0,.05), 2px 5px 5px rgb(254,218,222, 1),
   margin-top: 20;
   background-color: 'pink';
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: none
   }
 `;

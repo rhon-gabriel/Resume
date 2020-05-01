@@ -59,7 +59,7 @@ const Container = withStyles({
 const Content = withStyles({
   root: {
     padding: 30,
-    ["@media (max-width:600px)"]: {
+    ["@media (max-width:800px)"]: {
       display: "none",
     },
   },
@@ -87,7 +87,7 @@ const ExperienceContainer = styled.div`
 
 const MobileContent = styled.div`
   align-items: center;
-  @media only screen and (min-width: 600px)  {
+  @media only screen and (min-width: 800px)  {
     display: none;
   }
 `;

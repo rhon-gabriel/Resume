@@ -58,30 +58,6 @@ export default function Experiences() {
             );
           })}
       </Container>
-      <MobileContainer>
-        {experiences &&
-          experiences.map((el) => {
-            return (
-              <MobileCard>
-                <Grid Container>
-                  <Grid item xs={8} style={styles.titleContainer}>
-                    <h1 style={styles.title}>{el.name}</h1>
-                    <h6>{el.date}</h6>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <img src={el.logo} alt="company logo" style={styles.img} />
-                  </Grid>
-                </Grid>
-                <Content>
-                  <Bar />
-                  <MobileTextContainer>
-                    <p>{el.description}</p>
-                  </MobileTextContainer>
-                </Content>
-              </MobileCard>
-            );
-          })}
-      </MobileContainer>
     </Wrapper>
   );
 }
@@ -128,12 +104,6 @@ const styles = {
     width: 35,
     margin: 5,
   },
-  textContainer: {
-    marginTop: 20,
-  },
-  txt: {
-    color: "#434343",
-  },
 };
 
 const Wrapper = styled.div`
@@ -145,7 +115,30 @@ const Container = styled.div`
   left: calc(50% - 500px);
   display: flex;
   @media (max-width: 600px) {
-    display: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: calc(50% - 165px);
+    height: 100%;
+    top: 10vh;
+    margin-left: 2vw;
+  }
+  @media (min-width: 600px) and (max-width: 800px){
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: calc(50% - 180px);
+    height: 100%;
+    top: 5vh;
+    margin-left: 2vw;
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    position: absolute;
+    display: flex;
+    top: 2vh;
+    flex-direction: column;
+    left: calc(50% - 220px);
+    height: 100%;
   }
 `;
 
@@ -153,6 +146,9 @@ const Content = styled.div`
   position: absolute;
   top: 15vh;
   left: 2vh;
+  @media (min-width: 600px) and (max-width: 1024px) {
+    top: 10vh;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -161,6 +157,18 @@ const TextContainer = styled.div`
   width: 340px;
   height: 340px;
   position: relative;
+  @media (min-width: 600px) and (max-width: 800px) {
+    margin-top: 1vh;
+    height: 140px;
+    width: 400px;
+    font-size: 22px;
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    font-size: 24px;
+    margin-top: 2vh;
+    width: 500px;
+    height: 340px;
+  }
 `;
 
 const Bar = styled.div`
@@ -179,7 +187,6 @@ const Card = styled.div`
   margin-left: -25px;
   transition: 0.4s ease-out;
   position: relative;
-  left: 0px;
   &:not(:first-child) {
     margin-right: -40px;
   }
@@ -192,7 +199,65 @@ const Card = styled.div`
     left: 80px;
     transition: 0.4s ease-out;
   }
+  @media (max-width: 600px) {
+    height: 300px;
+    width: 360px;
+    &:not(:first-child) {
+      margin-top: -150px;
+    }
+    &:hover {
+      transform: translateY(-90px);
+      transition: 0.4s ease-out;
+      z-index: 1;
+    }
+    &:hover ~ div {
+      position: relative;
+      left: 20px;
+      transition: 0.6s ease-out;
+      z-index: 1;
+      margin-top: -90px;
+    }
+  }
+  @media (min-width: 600px) and (max-width: 800px){
+    height: 420px;
+    width: 500px;
+    &:not(:first-child) {
+      margin-top: -150px;
+    }
+    &:hover {
+      transform: translateY(-90px);
+      transition: 0.4s ease-out;
+      z-index: 1;
+    }
+    &:hover ~ div {
+      position: relative;
+      left: 20px;
+      transition: 0.6s ease-out;
+      z-index: 1;
+      margin-top: -90px;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    width: 600px;
+    height: 600px;
+    &:not(:first-child) {
+      margin-top: -100px;
+    }
+    &:hover {
+      transform: translateY(-90px) translateX(-90px);
+      transition: 0.4s ease-out;
+      z-index: 1;
+    }
+    &:hover ~ div {
+      position: relative;
+      left: 200px;
+      transition: 0.6s ease-out;
+      z-index: 1;
+      margin-top: -120px;
+    }
+  }
 `;
+
 const IconContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -200,50 +265,7 @@ const IconContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding: 10;
-`;
-
-const MobileContainer = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin-top: 5vh;
-  margin-left: 2vw;
-  @media (min-width: 600px) {
-    display: none;
+  @media (max-width: 1024px) {
+    display: none
   }
-`;
-
-const MobileCard = styled.div`
-  display: flex;
-  height: 300px;
-  width: 360px;
-  background-color: rgb(64, 64, 64, 1);
-  border-radius: 10px;
-  box-shadow: 0 0 2rem #d1f2fd;
-  transition: 0.4s ease-out;
-  position: relative;
-  &:not(:first-child) {
-    margin-top: -150px;
-  }
-  &:hover {
-    transform: translateY(-90px);
-    transition: 0.4s ease-out;
-    z-index: 1;
-  }
-  &:hover ~ div {
-    position: relative;
-    left: 20px;
-    transition: 0.6s ease-out;
-    z-index: 1;
-    margin-top: -90px;
-  }
-`;
-
-const MobileTextContainer = styled.div`
-  color: white;
-  margin-top: 1vh;
-  width: 340px;
-  height: 140px;
-  position: relative;
 `;

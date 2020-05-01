@@ -108,7 +108,7 @@ const Wrapper = withStyles({
 const Content = withStyles({
   root: {
     flexGrow: 1,
-    ["@media (max-width:600px)"]: {
+    ["@media (max-width:800px)"]: {
       display: "none",
     },
   },
@@ -117,7 +117,7 @@ const Content = withStyles({
 const MobileContainer = styled.div`
   height: 100%;
   width: 100%;
-  @media (min-width: 600px) {
+  @media (min-width: 800px) {
     display: none
   }
 `;

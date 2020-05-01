@@ -27,12 +27,11 @@ export default function WelcomePage(props) {
         </Content>
 
         <BottomContainer container direction="column" align="center">
-          <div
-            style={styles.exploreButton}
+          <ExploreButton
             onClick={() => scroll.moveSectionDown()}
           >
             Explore more
-          </div>
+          </ExploreButton>
         </BottomContainer>
       </Container>
     </Wrapper>
@@ -62,6 +61,16 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
+const ExploreButton = styled.div`
+  color: #434343;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  @media (min-width: 600px) {
+    font-size: 28px;
+  }
+`;
+
 const Container = withStyles({
   root: {
     flexGrow: 1,
@@ -73,6 +82,9 @@ const HeaderContainer = withStyles({
   root: {
     flexGrow: 1,
     padding: 10,
+    ["@media (max-width:600px)"]: {
+      display: "none"
+    },
   },
 })(Grid);
 
@@ -87,7 +99,7 @@ const CardAboutContainer = withStyles({
     flexGrow: 1,
     display: "flex",
     justifyContent: "center",
-    ["@media (max-width:600px)"]: {
+    ["@media (max-width:800px)"]: {
       margin: "auto",
     },
   },
@@ -99,7 +111,7 @@ const SkillsContainer = withStyles({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    ["@media (max-width:600px)"]: {
+    ["@media (max-width:800px)"]: {
       display: "none",
     },
   },

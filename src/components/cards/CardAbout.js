@@ -83,6 +83,17 @@ const Card = styled.div`
     width: 330px;
     min-height: 500px;
   }
+  @media (min-width: 600px) and (max-width: 800px){
+    width: 460px;
+    height: 650px;
+    font-size: 20px;
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    margin-left: 40px;
+    width: 450px;
+    height: 750px;
+    font-size: 22px;
+  }
 `;
 
 const ProfilePic = styled.img`
@@ -99,5 +110,15 @@ const ProfilePic = styled.img`
     width: 180px;
     height: 180px;
     margin: 3vh 50px 0 50px;
+  }
+  @media (min-width: 600px) and (max-width: 800px){
+    width: 220px;
+    height: 220px;
+    margin: 3vh 90px 0 90px;
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    width: 250px;
+    height: 230px;
+    margin: 3vh 55px 0 55px;
   }
 `;
