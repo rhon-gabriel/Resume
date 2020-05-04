@@ -1,9 +1,11 @@
 import React from "react";
 import InstagramEmbed from "react-instagram-embed";
-import { Grid, withStyles } from "@material-ui/core";
+import { Grid, withStyles, Icon } from "@material-ui/core";
 import styled from "styled-components";
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-export default function Interests() {
+export default function Interests(props) {
+  const { scroll } = props;
   return (
     <div>
     <Wrapper>
@@ -46,6 +48,7 @@ export default function Interests() {
             protocol=""
             injectScript
           />
+        <ArrowUpwardIcon style={{width: '100%'}}onClick={() => scroll.moveTo(1, 1)}/>
         </div>
       </MobileContainer>
     </div>
@@ -115,7 +118,6 @@ const Content = withStyles({
 })(Grid);
 
 const MobileContainer = styled.div`
-  height: 100%;
   width: 100%;
   @media (min-width: 800px) {
     display: none

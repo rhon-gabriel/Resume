@@ -24,7 +24,7 @@ export default function App() {
             />
             <Navigation id={"section-3"} content={<Experiences />} />
             <Navigation id={"section-2"} content={<Skills />} />
-            <Navigation id={"section-4"} content={<Interests />} />
+            <Navigation id={"section-4"} content={<Interests scroll={fullpageApi}/>} />
           </div>
         );
       }}

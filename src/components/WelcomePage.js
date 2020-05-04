@@ -125,7 +125,7 @@ const BottomContainer = withStyles({
     flexDirection: "column",
     alignItems: "center",
     animation: "heartbeat 3s ease infinite both",
-    ["@media (max-width:800px)"]: {
+    ["@media (max-width:600px)"]: {
       display: "none",
     },
   },

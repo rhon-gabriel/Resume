@@ -71,9 +71,9 @@ const styles = {
     letterSpacing: "-.20px",
     background: "linear-gradient(to right, #dd5e89, #f7bb97)",
     backgroundClip: 'text',
-    textFillColor: 'transparent',
+    textFillColor: 'rgba(255, 255, 255, 0)',
     "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent",
+    "-webkit-text-fill-color": "rgba(255, 255, 255, 0)",
   },
   titleContainer: {
     margin: 10,
@@ -88,7 +88,7 @@ const styles = {
     letterSpacing: "-.20px",
     background: "linear-gradient(to right, #dd5e89, #f7bb97)",
     "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent",
+    "-webkit-text-fill-color": "rgba(255, 255, 255, 0)",
   },
   img: {
     width: 100,

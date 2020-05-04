@@ -8,13 +8,13 @@ const CardAbout = (props) => {
     <Card>
       <ProfilePic src={img} alt="profile pic" />
       <div style={styles.textContainer}>
-        <div style={styles.name}>Rhoneil Gabriel</div>
+        <Name>Rhoneil Gabriel</Name>
         <h4 style={styles.profession}>Full Stack Developer</h4>
         <div style={styles.paragraph}>
           <p style={styles.text}>
-            Hi! <br/>  
-            Thanks for checking my resume!I am Rhon and I am a software developer by profession and
-            indoor gardener on my spare time! 
+            Hi! I'm Rhon!<br/>  
+            Thanks for checking my resume. I'm a software developer by profession and
+            avid indoor gardener in my spare time. 
           </p>
           <p style={styles.text}>
             Graduated from 2 intensive coding bootcamps, 
@@ -37,19 +37,6 @@ const styles = {
     marginTop: "15vh",
     flex: 1,
     overflow: 'hidden'
-  },
-  name: {
-    marginTop: '3vh',
-    fontSize: 25,
-    animation: "text-focus-in 2s",
-    animationFillMode: "cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
-    justifyContent: "center",
-    display: "flex",
-    background: "linear-gradient(to right, #40e0d0, #ff8c00, #ff0080)",
-    backgroundClip: 'text',
-    textFillColor: 'transparent',
-    "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent",
   },
   profession: {
     fontSize: 16,
@@ -83,7 +70,6 @@ const Card = styled.div`
   margin-top: 20px;
   @media (max-width: 600px) {
     width: 330px;
-    min-height: 500px;
   }
   @media (min-width: 600px) and (max-width: 800px){
     width: 460px;
@@ -123,4 +109,18 @@ const ProfilePic = styled.img`
     height: 230px;
     margin: 3vh 55px 0 55px;
   }
+`;
+
+const Name = styled.div`
+  margin-top: 3vh;
+  font-size: 25px;
+  animation: text-focus-in 2s;
+  animation-fill-mode: cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  justify-content: center;
+  display: flex;
+  background: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
+  background-clip: text;
+  text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 `;
