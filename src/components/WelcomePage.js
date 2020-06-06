@@ -64,10 +64,10 @@ const Wrapper = styled.div`
 const ExploreButton = styled.div`
   color: #434343;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
   @media (min-width: 600px) {
-    font-size: 22px;
+    font-size: 18px;
   }
 `;
 

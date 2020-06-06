@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getSkills } from "../../helpers/index";
 
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import 'react-circular-progressbar/dist/styles.css';
 import styled from "styled-components";
 import PacmanLoader from "react-spinners/PacmanLoader";
 

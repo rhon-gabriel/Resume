@@ -13,16 +13,16 @@ const CardAbout = (props) => {
         <div style={styles.paragraph}>
           <p style={styles.text}>
             Hi! I'm Rhon!<br/>  
-            Thanks for checking my resume. I'm a software developer by profession and
+            I'm a software developer by profession and
             avid indoor gardener in my spare time. 
           </p>
           <p style={styles.text}>
-            Graduated from 2 intensive coding bootcamps, 
-            where I learned Ruby and Javascript
+            Graduated from 2 intensive coding bootcamps 
+            where I learned Ruby and Javascript. 
           </p>
           <p style={styles.text}>
             Currently employed as Full-Stack Developer, working mainly 
-            with React/React Native and Node.js
+            with React/React Native, Node.js and MongoDB.
           </p>
         </div>
       </div>
